@@ -27,11 +27,14 @@ public class PlayerMovementTest : MonoBehaviour
 	
 	private bool grounded;
 	private bool ducking = false;
+	private float defaultFixedDeltaTime;
 
 	void Awake()
 	{
 		boxCollider = GetComponent<BoxCollider2D>();
 		spriterender = GetComponent<SpriteRenderer>();
+		Time.timeScale = 1.0f;
+		defaultFixedDeltaTime = Time.fixedDeltaTime;
 	}
 	
 	
@@ -102,6 +105,11 @@ public class PlayerMovementTest : MonoBehaviour
 				}
 			}
 		}
+		
+		// Superhot mode
+		Time.timeScale = Mathf.Lerp(0.2f, 1.0f, velocity.magnitude / speed);
+		Time.fixedDeltaTime = defaultFixedDeltaTime * Mathf.Lerp(0.2f, 1.0f, velocity.magnitude / speed);
+
 	}
 
 }
