@@ -7,12 +7,12 @@ using UnityEngine;
 public class SpinTestSpinner : MonoBehaviour
 {
 	public float speed = 10f;
-	private float amt = 0f;
-	
+	// private float amt = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     void Update()

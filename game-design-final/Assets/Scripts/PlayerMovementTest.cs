@@ -21,12 +21,12 @@ public class PlayerMovementTest : MonoBehaviour
 	[SerializeField, Tooltip("Max height the character will jump regardless of gravity")]
 	float jumpHeight = 4;
 
-	private SpriteRenderer spriterender;	
+	private SpriteRenderer spriterender;
 	private BoxCollider2D boxCollider;
 	private Vector2 velocity;
-	
+
 	private bool grounded;
-	private bool ducking = false;
+	// private bool ducking = false;
 	private float defaultFixedDeltaTime;
 
 	void Awake()
@@ -36,18 +36,19 @@ public class PlayerMovementTest : MonoBehaviour
 		Time.timeScale = 1.0f;
 		defaultFixedDeltaTime = Time.fixedDeltaTime;
 	}
-	
-	
+
+
 	private void Update()
 	{
 		// Use GetAxisRaw to ensure our input is either 0, 1 or -1.
 		float moveInput = Input.GetAxisRaw("Horizontal");
-		
+
 		if (moveInput == 1) spriterender.flipX = false;
 		if (moveInput == -1) spriterender.flipX = true;
 
 		if (grounded)
 		{
+			// Debug.Log("grounded");
 			velocity.y = 0;
 
 			if (Input.GetButtonDown("Jump"))
@@ -55,11 +56,11 @@ public class PlayerMovementTest : MonoBehaviour
 				// Calculate the velocity required to achieve the target jump height.
 				velocity.y = Mathf.Sqrt(2 * jumpHeight * Mathf.Abs(Physics2D.gravity.y));
 			}
-			
-			if (Input.GetButtonDown("Duck"))
-			{
-				ducking = true;
-			}
+
+			// if (Input.GetButtonDown("Duck"))
+			// {
+			// 	ducking = true;
+			// }
 		}
 
 		float acceleration = grounded ? walkAcceleration : airAcceleration;
@@ -88,24 +89,29 @@ public class PlayerMovementTest : MonoBehaviour
 			// Ignore our own collider.
 				if (hit == boxCollider)
 				continue;
-	
 			ColliderDistance2D colliderDistance = hit.Distance(boxCollider);
+
+			// If we intersect an object beneath us, set grounded to true.
+			if (Vector2.Angle(colliderDistance.normal, Vector2.up) < 90 && velocity.y < 0)
+			{
+				grounded = true;
+			}
 
 			// Ensure that we are still overlapping this collider.
 			// The overlap may no longer exist due to another intersected collider
 			// pushing us out of this one.
- 			if (colliderDistance.isOverlapped)
-			{
-				transform.Translate(colliderDistance.pointA - colliderDistance.pointB);
-
-				// If we intersect an object beneath us, set grounded to true. 
-				if (Vector2.Angle(colliderDistance.normal, Vector2.up) < 90 && velocity.y < 0)
-				{
-					grounded = true;
-				}
-			}
+ 			// if (colliderDistance.isOverlapped)
+			// {
+			// 	transform.Translate(colliderDistance.pointA - colliderDistance.pointB);
+			//
+			// 	// If we intersect an object beneath us, set grounded to true.
+			// 	if (Vector2.Angle(colliderDistance.normal, Vector2.up) < 90 && velocity.y < 0)
+			// 	{
+			// 		grounded = true;
+			// 	}
+			// }
 		}
-		
+
 		// Superhot mode
 		Time.timeScale = Mathf.Lerp(0.2f, 1.0f, velocity.magnitude / speed);
 		Time.fixedDeltaTime = defaultFixedDeltaTime * Mathf.Lerp(0.2f, 1.0f, velocity.magnitude / speed);
@@ -113,27 +119,3 @@ public class PlayerMovementTest : MonoBehaviour
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
