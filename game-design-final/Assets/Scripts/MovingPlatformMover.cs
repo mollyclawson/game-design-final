@@ -18,7 +18,8 @@ public class MovingPlatformMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    	Vector3 temp = transform.position;
+
+        Vector3 temp = transform.position;
     	temp.x = sx + Mathf.Sin( Time.time * speed ) * extent;
     	transform.position = temp; 
         
