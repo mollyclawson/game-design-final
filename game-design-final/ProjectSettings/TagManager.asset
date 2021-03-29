@@ -7,6 +7,9 @@ TagManager:
   - StartPlatform
   - MovingPlatform
   - Background
+  - Enemy
+  - GameHandler
+  - healthBar
   layers:
   - Default
   - TransparentFX
