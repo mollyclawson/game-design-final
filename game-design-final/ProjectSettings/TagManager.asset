@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - GameHandler
   - healthBar
+  - switch
   layers:
   - Default
   - TransparentFX
