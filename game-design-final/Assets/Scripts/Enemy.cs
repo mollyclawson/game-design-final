@@ -12,15 +12,15 @@ public class Enemy : MonoBehaviour {
 
    //if bullet hits a collider, play explosion animation, then destroy effect and bullet
    void OnTriggerEnter2D(Collider2D other){
-      if (other.gameObject.tag != "Enemy") {
-         if (other.gameObject.tag == "Player"){
-         GameObject healthBar = GameObject.FindWithTag("healthBar");
-         if(healthBar != null){
-            healthBar = healthBar.GetComponent();
-            healthBar.takeDamage(damage);
-            Debug.log("Collided");
-         }
-        }
-      }
+      // if (other.gameObject.tag != "Enemy") {
+      //    if (other.gameObject.tag == "Player"){
+      //    GameObject healthBar = GameObject.FindWithTag("healthBar");
+      //    if(healthBar != null){
+      //       healthBar = healthBar.GetComponent();
+      //       healthBar.takeDamage(damage);
+      //       Debug.log("Collided");
+      //    }
+      //   }
+      // }
     }
 }
