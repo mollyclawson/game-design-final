@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public PlayerController controller;
+    public Animator animator;
     float horizontalMove = 0f;
     public float runSpeed = 40f;
     bool jump = false;
@@ -16,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+
+        
 
         if (Input.GetButtonDown("Jump"))
         {
@@ -29,6 +32,11 @@ public class PlayerMovement : MonoBehaviour
         {
             crouch = false;
         }
+    }
+
+    public void OnCrouching (bool IsCrouching)
+    {
+        animator.SetBool("isCrouching", IsCrouching);
     }
 
     private void FixedUpdate()
