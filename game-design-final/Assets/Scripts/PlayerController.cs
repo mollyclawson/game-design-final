@@ -37,6 +37,15 @@ public class PlayerController : MonoBehaviour
 
 	public BoolEvent OnCrouchEvent;
 	private bool m_wasCrouching = false;
+  
+  private int extraJumps;
+  
+  public Animator animator;
+  
+  private void Start()
+	{
+		extraJumps = 1;
+	}
 
 	private void Awake()
 	{
@@ -68,6 +77,11 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
+  public void OnLanding()
+  {
+    extraJumps = 1;
+    animator.SetBool("IsDoubleJump", false);
+  }
 
 	public void Move(float move, bool crouch, bool jump)
 	{
@@ -132,12 +146,21 @@ public class PlayerController : MonoBehaviour
 			}
 		}
 		// If the player should jump...
-		if (m_Grounded && jump)
+		if (extraJumps == 1 && jump)
 		{
 			// Add a vertical force to the player.
 			m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
-		}
+      extraJumps--;
+      
+		} else if (extraJumps == 0 && jump)
+    {
+      m_Grounded = false;
+			m_Rigidbody2D.AddForce(new Vector2(0f, 200));
+      extraJumps--;
+      animator.SetBool("IsDoubleJump", true);
+    }
+    
 	}
 
 

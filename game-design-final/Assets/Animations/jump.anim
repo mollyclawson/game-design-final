@@ -3897,7 +3897,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: R_arm/R_arm_Target
+    path: bone_lowerbody/bone_upperbody/bone_neck
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -3907,7 +3907,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: R_arm/R_arm_Target
+    path: bone_lowerbody/bone_upperbody/bone_neck
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -3917,7 +3917,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: R_arm/R_arm_Target
+    path: bone_lowerbody/bone_upperbody/bone_neck
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -4077,7 +4077,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: bone_lowerbody/bone_upperbody/bone_neck
+    path: R_arm/R_arm_Target
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -4087,7 +4087,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: bone_lowerbody/bone_upperbody/bone_neck
+    path: R_arm/R_arm_Target
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -4097,7 +4097,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: bone_lowerbody/bone_upperbody/bone_neck
+    path: R_arm/R_arm_Target
     classID: 4
     script: {fileID: 0}
   - curve:
