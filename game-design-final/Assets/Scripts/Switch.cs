@@ -20,10 +20,13 @@ public class Switch : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        // set switch to on sprite
-        gameObject.GetComponent<SpriteRenderer>().sprite = switchOn.GetComponent<SpriteRenderer>().sprite;
+        // If I hit the player...
+        if (col.gameObject.tag == "Player") {
+            // set switch to on sprite
+            gameObject.GetComponent<SpriteRenderer>().sprite = switchOn.GetComponent<SpriteRenderer>().sprite;
 
-        // set isOn to true when triggered
-        isOn = true;
+            // set isOn to true when triggered
+            isOn = true;
+        }
     }
 }
