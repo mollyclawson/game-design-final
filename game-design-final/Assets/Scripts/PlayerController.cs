@@ -174,4 +174,14 @@ public class PlayerController : MonoBehaviour
 		theScale.x *= -1;
 		transform.localScale = theScale;
 	}
+
+	// private void OnCollisionEnter2D(Collision2D other){
+	// Debug.Log("I hit something");
+
+	// if(other.gameObject.tag == "Enemy") {
+    //         Debug.Log("I hit an enemy!");
+    //     }
+    // }
 }
+
+

@@ -11,6 +11,7 @@ public class HealthBar : MonoBehaviour {
       //public GameObject deathEffect;
       public Image healthBar;
       public Color healthyColor = new Color(0.3f, 0.8f, 0.3f);
+      public Color mediumColor = new Color(0.3f, 0.8f, 0.3f);
       public Color unhealthyColor = new Color(0.8f, 0.3f, 0.3f);
 
             //temporary time variables:
@@ -24,13 +25,13 @@ public class HealthBar : MonoBehaviour {
       }
 
 // this timer is just to test damage. Comment-out when no longer needed
-    //   void FixedUpdate () {
-    //         theTimer -= Time.deltaTime;
-    //         if (theTimer <= 0) {
-    //               
-    //               theTimer = timeToDamage;
-    //         }
-    //   }
+      void FixedUpdate () {
+            // theTimer -= Time.deltaTime;
+            // if (theTimer <= 0) {
+            //       TakeDamage(damageAmt);
+            //       theTimer = timeToDamage;
+            // }
+      }
 
 
       public void SetColor(Color newColor){
@@ -41,7 +42,7 @@ public class HealthBar : MonoBehaviour {
             health -= amount;
             healthBar.fillAmount = health / startHealth;
             //turn red at low health:
-            if (health < 0.3f){
+            if (health < 30f){
                   if ((health * 100f) % 3 <= 0){
                         SetColor(Color.white);
                         Die();
@@ -51,7 +52,12 @@ public class HealthBar : MonoBehaviour {
                   }
             }
             else {
-                  SetColor(healthyColor);
+                  if(health > 50f){
+                        SetColor(healthyColor);
+                  } else {
+                        SetColor(mediumColor);
+                  }
+                  
             }
       }
 
