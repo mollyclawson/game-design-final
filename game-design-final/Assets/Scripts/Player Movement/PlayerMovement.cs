@@ -33,6 +33,10 @@ public class PlayerMovement : MonoBehaviour
         } else if (Input.GetButtonUp("Crouch"))
         {
             crouch = false;
+        } else if (Input.GetButtonDown("Quit"))
+        {
+            Application.Quit();
+            Debug.Log("Quit!");
         }
     }
     
