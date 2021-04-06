@@ -21,7 +21,7 @@ TagManager:
   - 
   - 
   - Player
-  - 
+  - LevelTilemap
   - 
   - 
   - 
@@ -53,4 +53,7 @@ TagManager:
     locked: 0
   - name: Enemy
     uniqueID: 3468231789
+    locked: 0
+  - name: LevelTilemap
+    uniqueID: 3510913521
     locked: 0
