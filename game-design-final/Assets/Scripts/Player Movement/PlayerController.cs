@@ -153,13 +153,14 @@ public class PlayerController : MonoBehaviour
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
       extraJumps--;
       
-		} else if (extraJumps == 0 && jump)
-    {
-      m_Grounded = false;
-			m_Rigidbody2D.AddForce(new Vector2(0f, 200));
-      extraJumps--;
-      animator.SetBool("IsDoubleJump", true);
-    }
+		} 
+    // else if (extraJumps == 0 && jump)
+    // {
+    //   m_Grounded = false;
+		// 	m_Rigidbody2D.AddForce(new Vector2(0f, 200));
+    //   extraJumps--;
+    //   animator.SetBool("IsDoubleJump", true);
+    // }
     
 	}
 
