@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
   
   public Animator animator;
   
+  
   private void Start()
 	{
 		extraJumps = 1;
@@ -71,16 +72,20 @@ public class PlayerController : MonoBehaviour
 			if (colliders[i].gameObject != gameObject)
 			{
 				m_Grounded = true;
-				if (!wasGrounded)
-					OnLandEvent.Invoke();
+				if (!wasGrounded && m_Rigidbody2D.velocity.y < -0.01)
+        {
+          OnLandEvent.Invoke();
+          Debug.Log("landed");
+        }
 			}
 		}
 	}
 
   public void OnLanding()
   {
-    extraJumps = 1;
-    animator.SetBool("IsDoubleJump", false);
+    //If rigidbody2D velocity is downwards only    
+      extraJumps = 1;
+      animator.SetBool("IsDoubleJump", false);
   }
 
 	public void Move(float move, bool crouch, bool jump)
@@ -150,17 +155,17 @@ public class PlayerController : MonoBehaviour
 		{
 			// Add a vertical force to the player.
 			m_Grounded = false;
+      Debug.Log("false from jump");
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
       extraJumps--;
       
 		} 
-    // else if (extraJumps == 0 && jump)
-    // {
-    //   m_Grounded = false;
-		// 	m_Rigidbody2D.AddForce(new Vector2(0f, 200));
-    //   extraJumps--;
-    //   animator.SetBool("IsDoubleJump", true);
-    // }
+    else if (extraJumps == 0 && jump)
+    {
+			m_Rigidbody2D.AddForce(new Vector2(0f, 200));
+      extraJumps--;
+      animator.SetBool("IsDoubleJump", true);
+    }
     
 	}
 

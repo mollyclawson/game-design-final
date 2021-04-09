@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public float runSpeed = 40f;
     bool jump = false;
     bool crouch = false;
+    private Rigidbody2D m_Rigidbody2D;
     
 
     // Update is called once per frame
@@ -23,7 +24,6 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
-            animator.SetTrigger("JumpTemp");
             animator.SetBool("IsJumping", true);
         }
 
@@ -43,8 +43,7 @@ public class PlayerMovement : MonoBehaviour
     
     public void OnLanding()
     {
-      animator.SetBool("IsJumping", false);
-      Debug.Log("landed");
+        animator.SetBool("IsJumping", false);
     }
     
     public void OnCrouching(bool isCrouching)
