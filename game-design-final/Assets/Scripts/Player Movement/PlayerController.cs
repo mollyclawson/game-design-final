@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
@@ -72,7 +73,8 @@ public class PlayerController : MonoBehaviour
 			if (colliders[i].gameObject != gameObject)
 			{
 				m_Grounded = true;
-				if (!wasGrounded && m_Rigidbody2D.velocity.y < -0.01)
+        //&& m_Rigidbody2D.velocity.y < -0.01
+				if (!wasGrounded)
         {
           OnLandEvent.Invoke();
           Debug.Log("landed");
@@ -154,9 +156,9 @@ public class PlayerController : MonoBehaviour
 		if (extraJumps == 1 && jump)
 		{
 			// Add a vertical force to the player.
-			m_Grounded = false;
+      m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+      StartCoroutine(Wait());
       Debug.Log("false from jump");
-			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
       extraJumps--;
       
 		} 
@@ -168,6 +170,12 @@ public class PlayerController : MonoBehaviour
     }
     
 	}
+  
+  private IEnumerator Wait()
+  {
+    yield return new WaitForSeconds(0.1f);
+    m_Grounded = false;  
+  }
 
 
 	private void Flip()
