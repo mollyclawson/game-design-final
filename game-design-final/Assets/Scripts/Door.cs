@@ -29,6 +29,6 @@ public class Door : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         // Go to next level
-        SceneManager.LoadScene("Level2");
+        SceneManager.LoadScene("TestLevel1");
     }
 }
