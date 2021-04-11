@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7323407378120829060}
   - component: {fileID: 7452058474453119638}
-  - component: {fileID: 5565752140130770686}
   - component: {fileID: 807430047077839275}
   - component: {fileID: 3504082749287105269}
   m_Layer: 0
@@ -73,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 74bc05937054d4ccd9f1a45e209aad9d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2a09cc7a8d7304e9d96ac546036f6303, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,32 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &5565752140130770686
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8759794600001391981}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 1
-  m_Offset: {x: 0.19238853, y: 0.28858232}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.85, y: 5.15}
-    newSize: {x: 4.85, y: 5.15}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.695675, y: 3.418517}
-  m_EdgeRadius: 0
 --- !u!61 &807430047077839275
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -120,21 +93,21 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.14428806, y: 0.33667612}
+  m_Offset: {x: 0.00483799, y: 0.0054826736}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.85, y: 5.15}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 4.85, y: 5.15}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.599474, y: 3.3223295}
+  m_Size: {x: 1.3682766, y: 1.9975567}
   m_EdgeRadius: 0
 --- !u!114 &3504082749287105269
 MonoBehaviour:
@@ -148,8 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b115a01ad42aa46d5a992c744392c60f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  switchOn: {fileID: 1308475810315495631, guid: b18c46d15ca9a46bb99f140c2c8242d7,
+  switchOn: {fileID: 8239137416294885605, guid: f549838c2dca0419781e541c8b96d2ab,
     type: 3}
-  switchOff: {fileID: 7459978942102699271, guid: 541c821be0eda45138d1867b6cd7c750,
+  switchOff: {fileID: 6168158632215720574, guid: 8f977dc3a3dee4ca4b1b3ebfaaf2d799,
     type: 3}
   isOn: 0
