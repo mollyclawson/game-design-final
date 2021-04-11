@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Level2Manager : MonoBehaviour
+public class Level3Manager : MonoBehaviour
 {
     [SerializeField]
     GameObject[] switches;
@@ -39,7 +39,7 @@ public class Level2Manager : MonoBehaviour
     public void GetExitDoorState()
     {
         if (numSwitches <= 0) {
-            exitDoor.GetComponent<Door2>().OpenDoor();
+            exitDoor.GetComponent<FinalDoor>().OpenDoor();
         }
     }
 
