@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
 	[Space]
 
 	public UnityEvent OnLandEvent;
-
+  
 	[System.Serializable]
 	public class BoolEvent : UnityEvent<bool> { }
 
@@ -73,7 +73,6 @@ public class PlayerController : MonoBehaviour
 			if (colliders[i].gameObject != gameObject)
 			{
 				m_Grounded = true;
-        //&& m_Rigidbody2D.velocity.y < -0.01
 				if (!wasGrounded)
         {
           OnLandEvent.Invoke();
@@ -88,6 +87,7 @@ public class PlayerController : MonoBehaviour
     //If rigidbody2D velocity is downwards only    
       extraJumps = 1;
       animator.SetBool("IsDoubleJump", false);
+      animator.SetBool("IsFalling", false);
   }
 
 	public void Move(float move, bool crouch, bool jump)
@@ -96,10 +96,14 @@ public class PlayerController : MonoBehaviour
 		if (!crouch)
 		{
 			// If the character has a ceiling preventing them from standing up, keep them crouching
-			// if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
-			// {
-			// 	crouch = true;
-			// }
+      
+      //TOFIX: this part below is the crouch check that doesn't work, it doesn't even get called in the game if there's a collider stopping the player from standing
+      
+			if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
+			{
+        Debug.Log("stay crouching");
+				crouch = true;
+			}
 		}
 
 		//only control the player if grounded or airControl is turned on
@@ -151,13 +155,14 @@ public class PlayerController : MonoBehaviour
 				// ... flip the player.
 				Flip();
 			}
+        
 		}
 		// If the player should jump...
 		if (extraJumps == 1 && jump)
 		{
 			// Add a vertical force to the player.
       m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
-      StartCoroutine(Wait());
+      StartCoroutine(Wait());    
       Debug.Log("false from jump");
       extraJumps--;
       
@@ -168,6 +173,11 @@ public class PlayerController : MonoBehaviour
       extraJumps--;
       animator.SetBool("IsDoubleJump", true);
     }
+    
+    //Falling
+    // if (m_Grounded == false && m_Rigidbody2D.velocity.y < -0.01){
+    //   animator.SetBool("IsFalling", true);
+    // }
     
 	}
   
