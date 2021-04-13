@@ -59,6 +59,13 @@ public class PlayerController : MonoBehaviour
 		if (OnCrouchEvent == null)
 			OnCrouchEvent = new BoolEvent();
 	}
+  
+  void OnTriggerEnter2D(Collider2D col)
+  {
+      if (col.gameObject.tag == "switch") {
+        animator.SetTrigger("TouchSwitch");  
+      }
+  }
 
 	private void FixedUpdate()
 	{
@@ -102,7 +109,9 @@ public class PlayerController : MonoBehaviour
 			if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
 			{
         //Debug.Log("stay crouching");
-				crouch = true;
+        crouch = true;
+        
+        
 			}
 		}
 
@@ -113,12 +122,11 @@ public class PlayerController : MonoBehaviour
 			// If crouching
 			if (crouch)
 			{
-				if (!m_wasCrouching)
-				{
+				if (!m_wasCrouching) {
 					m_wasCrouching = true;
 					OnCrouchEvent.Invoke(true);
 				}
-
+        
 				// Reduce the speed by the crouchSpeed multiplier
 				move *= m_CrouchSpeed;
 
@@ -133,8 +141,8 @@ public class PlayerController : MonoBehaviour
 
 				if (m_wasCrouching)
 				{
-					m_wasCrouching = false;
-					OnCrouchEvent.Invoke(false);
+            m_wasCrouching = false;
+  					OnCrouchEvent.Invoke(false);
 				}
 			}
 
