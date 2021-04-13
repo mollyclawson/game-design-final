@@ -37010,7 +37010,7 @@ PrefabInstance:
     - target: {fileID: 8047541237798856993, guid: 0576170c17cb7462f8f7e26f51648bda,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.19533001
+      value: 0.19533
       objectReference: {fileID: 0}
     - target: {fileID: 8047541237798856993, guid: 0576170c17cb7462f8f7e26f51648bda,
         type: 3}
@@ -37050,7 +37050,7 @@ PrefabInstance:
     - target: {fileID: 8047541238138774808, guid: 0576170c17cb7462f8f7e26f51648bda,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.19958167
+      value: 0.19958168
       objectReference: {fileID: 0}
     - target: {fileID: 8047541238142141164, guid: 0576170c17cb7462f8f7e26f51648bda,
         type: 3}
@@ -44118,6 +44118,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Icicle
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889526454437877743, guid: 1602369b774d22f44be23dfcff217572,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1602369b774d22f44be23dfcff217572, type: 3}
