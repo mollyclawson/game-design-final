@@ -29,6 +29,6 @@ public class FinalDoor : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         // Go to win screen
-        SceneManager.LoadScene("WinScreen");
+        SceneManager.LoadScene("Level1");
     }
 }
