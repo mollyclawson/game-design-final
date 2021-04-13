@@ -1104,6 +1104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 6
+  acceleration: 0.1
   extent: 10
   startingPos: 6
 --- !u!1 &1034998373
@@ -36013,6 +36014,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 9
+  acceleration: 0.1
   extent: 11
   startingPos: 213
 --- !u!1 &1335132376
@@ -36840,6 +36842,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -6.91
       objectReference: {fileID: 0}
+    - target: {fileID: 597432622618030728, guid: 0576170c17cb7462f8f7e26f51648bda,
+        type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 456126159}
     - target: {fileID: 597432622618030729, guid: 0576170c17cb7462f8f7e26f51648bda,
         type: 3}
       propertyPath: m_JumpForce
@@ -37003,7 +37010,7 @@ PrefabInstance:
     - target: {fileID: 8047541237798856993, guid: 0576170c17cb7462f8f7e26f51648bda,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.19533
+      value: 0.19533001
       objectReference: {fileID: 0}
     - target: {fileID: 8047541237798856993, guid: 0576170c17cb7462f8f7e26f51648bda,
         type: 3}
@@ -37043,7 +37050,7 @@ PrefabInstance:
     - target: {fileID: 8047541238138774808, guid: 0576170c17cb7462f8f7e26f51648bda,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.19958168
+      value: 0.19958167
       objectReference: {fileID: 0}
     - target: {fileID: 8047541238142141164, guid: 0576170c17cb7462f8f7e26f51648bda,
         type: 3}
@@ -37799,6 +37806,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 10
+  acceleration: 0.1
   extent: 10
   startingPos: 6
 --- !u!1 &1616579067
@@ -43236,6 +43244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 8
+  acceleration: 0.1
   extent: 12
   startingPos: 6
 --- !u!4 &1657910469 stripped
@@ -43719,6 +43728,7 @@ MonoBehaviour:
   controller: {fileID: 1811155730}
   animator: {fileID: 0}
   runSpeed: 100
+  acceleration: 0.1
 --- !u!1001 &1813165859
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43845,6 +43855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 8
+  acceleration: 0.1
   extent: 10
   startingPos: 6
 --- !u!1 &2031097338
@@ -43914,6 +43925,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 10
+  acceleration: 0.1
   extent: 10
   startingPos: 6
 --- !u!1001 &3671705795800546243

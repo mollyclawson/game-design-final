@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
 				if (!wasGrounded)
         {
           OnLandEvent.Invoke();
-          Debug.Log("landed");
+          //Debug.Log("landed");
         }
 			}
 		}
@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour
       
 			if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
 			{
-        Debug.Log("stay crouching");
+        //Debug.Log("stay crouching");
 				crouch = true;
 			}
 		}
@@ -163,7 +163,7 @@ public class PlayerController : MonoBehaviour
 			// Add a vertical force to the player.
       m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
       StartCoroutine(Wait());    
-      Debug.Log("false from jump");
+      //Debug.Log("false from jump");
       extraJumps--;
       
 		} 

@@ -9,17 +9,30 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     float horizontalMove = 0f;
     public float runSpeed = 40f;
+    public float acceleration = 0.1f;
+    private float curSpeed = 0;
     bool jump = false;
     bool crouch = false;
     private Rigidbody2D m_Rigidbody2D;
-    
+   
+
+
 
     // Update is called once per frame
     void Update()
     {
-        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-        animator.SetFloat("Speed",Mathf.Abs(horizontalMove));
+        curSpeed = Mathf.Lerp(curSpeed, runSpeed, acceleration);
+        // horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+
+        // updates current run speed based on how long button has been pressed
         
+        horizontalMove = Input.GetAxisRaw("Horizontal") * curSpeed;
+        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+
+        if (Input.GetAxisRaw("Horizontal") == 0)
+        {
+            curSpeed = 0;
+        }
 
         if (Input.GetButtonDown("Jump"))
         {
@@ -30,14 +43,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Crouch"))
         {
             crouch = true;
-            
-        } else if (Input.GetButtonUp("Crouch"))
+
+        }
+        else if (Input.GetButtonUp("Crouch"))
         {
             crouch = false;
-        } else if (Input.GetButtonDown("Quit"))
-        {
-            Application.Quit();
-            Debug.Log("Quit!");
         }
     }
     
@@ -57,4 +67,7 @@ public class PlayerMovement : MonoBehaviour
         controller.Move((horizontalMove * Time.fixedDeltaTime), crouch, jump);
         jump = false; 
     }
+
+  
+
 }

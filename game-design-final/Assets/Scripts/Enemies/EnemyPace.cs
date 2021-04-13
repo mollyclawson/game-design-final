@@ -5,7 +5,10 @@ using UnityEngine;
 public class EnemyPace : MonoBehaviour
 {
     public float Speed = 3f;
+    public float acceleration = 0.1f;
+    private float curSpeed = 0f;
     private bool moveRight = true;
+    private bool isMoving = false;
     public float extent = 3; // range of motion left to right
     public float startingPos = 0; // where platform starts in range of motion
     private float rightBound;
@@ -31,17 +34,38 @@ public class EnemyPace : MonoBehaviour
             moveRight = true;
         }
 
-        // Platforms only update position when player moves laterally
-        if (Input.GetAxisRaw("Horizontal") != 0)
+
+        // Enemies move if player is crouching or moving laterally
+        if (Input.GetAxisRaw("Horizontal") == 0)
         {
-            if (moveRight)
-            {
-                transform.position = new Vector2(transform.position.x + Speed * Time.deltaTime, transform.position.y);
-            } else
-            {
-                transform.position = new Vector2(transform.position.x - Speed * Time.deltaTime, transform.position.y); ;
-            }
+            isMoving = false;
+        } else
+        {
+            isMoving = true;
         }
+        if (Input.GetAxisRaw("Crouch") != 0)
+        {
+            isMoving = true;
+        }
+   
+
+        // if Enemies are moving, they accelerate to max speed
+        // otherwise they stop instantly
+        if (isMoving)
+        {
+            curSpeed = Mathf.Lerp(curSpeed, Speed, acceleration);
+        } else {
+            curSpeed = 0;
+        }
+      
+        if (moveRight)
+        {
+            transform.position = new Vector2(transform.position.x + curSpeed * Time.deltaTime, transform.position.y);
+        } else
+        {
+            transform.position = new Vector2(transform.position.x - curSpeed * Time.deltaTime, transform.position.y); ;
+        }
+        
     }
     void OnCollisionEnter2D(Collision2D collision) 
     {
