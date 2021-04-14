@@ -14,11 +14,12 @@ public class Level3Manager : MonoBehaviour
 
     int numSwitches = 0;
     
-    public Animator animator;
+    public Animator animatorFade;
+    [SerializeField] Animator[] animatorSwitchesUI;
 
     void Start()
     {
-        animator.Play("FadeIn");
+        animatorFade.Play("FadeIn");
         GetNumSwitches();
     }
 
@@ -32,6 +33,7 @@ public class Level3Manager : MonoBehaviour
                 x = x + 1;
             } else if(switches[i].GetComponent<Switch>().isOn == true) {
                 x = x;
+                animatorSwitchesUI[i].SetTrigger("SwitchOn");  
             }
         }
         numSwitches = x;
