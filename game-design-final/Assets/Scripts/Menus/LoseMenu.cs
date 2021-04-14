@@ -5,6 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class LoseMenu : MonoBehaviour
 {
+    public Animator animator;
+    
+    void Start()
+    {
+        animator.Play("FadeIn");
+    }
+    
     public void TryAgain ()
     {
         SceneManager.LoadScene("Level1");

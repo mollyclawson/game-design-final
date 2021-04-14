@@ -18,6 +18,8 @@ public class HealthBar : MonoBehaviour {
       public float timeToDamage = 5f;
       private float theTimer;
       public float damageAmt = 10f;
+      
+      public Animator animator;
 
       private void Start () {
             health = startHealth;
@@ -65,10 +67,17 @@ public class HealthBar : MonoBehaviour {
 
       public void Die(){
             Debug.Log("You Died So Much");
-            SceneManager.LoadScene("LoseScreen");
+            animator.Play("FadeOut");
+            StartCoroutine(Wait()); 
         // death stuff. change scene? how about a particle effect?
         //Vector3 objPos = this.transform.position
         //Instantiate(deathEffect, objPos, Quaternion.identity) as GameObject;
         //SceneManager.LoadScene ("Scene_lose");
+    }
+    
+    private IEnumerator Wait()
+    {
+      yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length+animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
+      SceneManager.LoadScene("LoseScreen");
     }
 }

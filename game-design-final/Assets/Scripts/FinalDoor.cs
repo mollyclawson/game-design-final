@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class FinalDoor : MonoBehaviour
 {
     public bool isOpen = false;
+    
+    public Animator animator;
 
     void Start() {
         gameObject.GetComponent<Collider2D>().isTrigger = false;
@@ -29,6 +31,13 @@ public class FinalDoor : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         // Go to win screen
-        SceneManager.LoadScene("Level1");
+        animator.Play("FadeOut");
+        StartCoroutine(Wait()); 
+    }
+    
+    private IEnumerator Wait()
+    {
+      yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length+animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
+      SceneManager.LoadScene("Level1");
     }
 }

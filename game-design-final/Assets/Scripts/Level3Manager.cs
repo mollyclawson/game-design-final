@@ -13,9 +13,12 @@ public class Level3Manager : MonoBehaviour
     GameObject exitDoor;
 
     int numSwitches = 0;
+    
+    public Animator animator;
 
     void Start()
     {
+        animator.Play("FadeIn");
         GetNumSwitches();
     }
 
