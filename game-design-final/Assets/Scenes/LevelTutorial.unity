@@ -98177,7 +98177,8 @@ MonoBehaviour:
   switches:
   - {fileID: 926829231}
   exitDoor: {fileID: 137293095}
-  animator: {fileID: 1164508882}
+  animatorFade: {fileID: 1164508882}
+  animatorSwitchesUI: []
 --- !u!4 &1335132378
 Transform:
   m_ObjectHideFlags: 0
