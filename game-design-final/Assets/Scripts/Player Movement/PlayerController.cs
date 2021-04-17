@@ -168,18 +168,12 @@ public class PlayerController : MonoBehaviour
 		// If the player should jump...
 		if (extraJumps == 1 && jump)
 		{
-			// Add a vertical force to the player.
-      m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
-      StartCoroutine(Wait());    
-      //Debug.Log("false from jump");
-      extraJumps--;
-      
+			Jump();
 		} 
     else if (extraJumps == 0 && jump)
     {
-			m_Rigidbody2D.AddForce(new Vector2(0f, 200));
-      extraJumps--;
-      animator.SetBool("IsDoubleJump", true);
+		Jump();
+      	animator.SetBool("IsDoubleJump", true);
     }
     
     //Falling
@@ -189,6 +183,19 @@ public class PlayerController : MonoBehaviour
     
 	}
   
+	private void Jump()
+	{
+			// Set vertical velocity to 0
+			Vector2 tempVelocity = m_Rigidbody2D.velocity;
+			tempVelocity.y = 0;
+			m_Rigidbody2D.velocity = tempVelocity;
+			// Add a vertical force to the player.
+      		m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+      		StartCoroutine(Wait());    
+      		//Debug.Log("false from jump");
+      		extraJumps--;
+	}
+
   private IEnumerator Wait()
   {
     yield return new WaitForSeconds(0.1f);
@@ -207,13 +214,6 @@ public class PlayerController : MonoBehaviour
 		transform.localScale = theScale;
 	}
 
-	// private void OnCollisionEnter2D(Collision2D other){
-	// Debug.Log("I hit something");
-
-	// if(other.gameObject.tag == "Enemy") {
-    //         Debug.Log("I hit an enemy!");
-    //     }
-    // }
 }
 
 
