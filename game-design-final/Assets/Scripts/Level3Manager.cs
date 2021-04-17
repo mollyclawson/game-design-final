@@ -14,12 +14,10 @@ public class Level3Manager : MonoBehaviour
 
     int numSwitches = 0;
     
-    public Animator animatorFade;
     [SerializeField] Animator[] animatorSwitchesUI;
 
     void Start()
     {
-        animatorFade.Play("FadeIn");
         GetNumSwitches();
     }
 
