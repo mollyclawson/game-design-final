@@ -13,7 +13,7 @@ public class Level3Manager : MonoBehaviour
     GameObject exitDoor;
 
     int numSwitches = 0;
-    
+
     [SerializeField] Animator[] animatorSwitchesUI;
 
     void Start()
@@ -31,7 +31,7 @@ public class Level3Manager : MonoBehaviour
                 x = x + 1;
             } else if(switches[i].GetComponent<Switch>().isOn == true) {
                 x = x;
-                animatorSwitchesUI[i].SetTrigger("SwitchOn");  
+                animatorSwitchesUI[i].SetTrigger("SwitchOn");
             }
         }
         numSwitches = x;

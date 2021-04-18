@@ -31,15 +31,14 @@ public class FinalDoor : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        // Go to win screen
-        StartCoroutine(Wait()); 
+        StartCoroutine(Wait());
     }
-    
+
     private IEnumerator Wait()
     {
-      
+
       AsyncOperation operation = SceneManager.LoadSceneAsync(nextLevel);
-      
+
       loadingScreen.SetActive(true);
 
       while (!operation.isDone)
