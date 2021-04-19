@@ -11,6 +11,7 @@ public class BulletEnemy : MonoBehaviour {
    private Vector2 target;
    public GameObject hitEffectAnim;
 
+
    void Start() {
    //transform gets location, but we need Vector2 to get direction, so we can moveTowards.
       playerTrans = GameObject.FindGameObjectWithTag("Player").transform;

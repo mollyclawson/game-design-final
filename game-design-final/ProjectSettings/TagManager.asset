@@ -11,6 +11,7 @@ TagManager:
   - GameHandler
   - healthBar
   - switch
+  - Playground
   layers:
   - Default
   - TransparentFX
