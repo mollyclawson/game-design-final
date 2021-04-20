@@ -43,6 +43,11 @@ public class PlayerController : MonoBehaviour
   
   public Animator animator;
   
+  	private AudioSource jumpSound;
+  	private AudioSource doubleJumpSound;
+  	private AudioSource hurtSound1;
+   	private AudioSource hurtSound2;
+   	private AudioSource dieSound;
   
   private void Start()
 	{
@@ -58,6 +63,18 @@ public class PlayerController : MonoBehaviour
 
 		if (OnCrouchEvent == null)
 			OnCrouchEvent = new BoolEvent();
+		
+		// stupid hack to sort game sounds
+		AudioSource[] sounds = GetComponents<AudioSource>();
+		for ( int i = 0; i < sounds.Length; i++ )
+		{
+			if ( sounds[i].clip.name == "jump_1" ) jumpSound = sounds[i];
+			if ( sounds[i].clip.name == "jump_2" ) doubleJumpSound = sounds[i];
+			if ( sounds[i].clip.name == "enemy_hit_1" ) hurtSound1 = sounds[i];
+			if ( sounds[i].clip.name == "enemy_hit_2" ) hurtSound2 = sounds[i];
+			if ( sounds[i].clip.name == "player_yell" ) dieSound = sounds[i];
+		}
+
 	}
   
   void OnTriggerEnter2D(Collider2D col)
@@ -169,11 +186,16 @@ public class PlayerController : MonoBehaviour
 		if (extraJumps == 1 && jump)
 		{
 			Jump();
+			jumpSound.pitch = Random.Range( 0.8f, 1.2f );
+			jumpSound.Play();
+			
 		} 
     else if (extraJumps == 0 && jump)
     {
 		Jump();
       	animator.SetBool("IsDoubleJump", true);
+      		doubleJumpSound.pitch = Random.Range( 0.8f, 1.2f );
+      		doubleJumpSound.Play();
     }
     
     //Falling
