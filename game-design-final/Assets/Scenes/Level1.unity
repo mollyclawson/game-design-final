@@ -589,7 +589,7 @@ MonoBehaviour:
   isOpen: 0
   loadingScreen: {fileID: 1416764012}
   slider: {fileID: 1916855192}
-  nextLevel: Level3
+  nextLevel: Level2
 --- !u!61 &137293097
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -606,7 +606,7 @@ MonoBehaviour:
   isOpen: 0
   loadingScreen: {fileID: 1416764012}
   slider: {fileID: 1916855192}
-  nextLevel: Level4
+  nextLevel: WinScreen
 --- !u!61 &137293097
 BoxCollider2D:
   m_ObjectHideFlags: 0
