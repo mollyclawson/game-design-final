@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1780,6 +1780,11 @@ PrefabInstance:
       propertyPath: startingPos
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9163920248992634055, guid: 813ae8d834b6f4f809f48a28b7cbb9be,
+        type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1158258839}
     - target: {fileID: 9163920248992634056, guid: 813ae8d834b6f4f809f48a28b7cbb9be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2044,6 +2049,11 @@ PrefabInstance:
       propertyPath: startingPos
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9163920248992634055, guid: 813ae8d834b6f4f809f48a28b7cbb9be,
+        type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1158258839}
     - target: {fileID: 9163920248992634056, guid: 813ae8d834b6f4f809f48a28b7cbb9be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4370,6 +4380,11 @@ PrefabInstance:
       propertyPath: Speed
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 9163920248992634055, guid: 813ae8d834b6f4f809f48a28b7cbb9be,
+        type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1158258839}
     - target: {fileID: 9163920248992634056, guid: 813ae8d834b6f4f809f48a28b7cbb9be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4988,6 +5003,11 @@ PrefabInstance:
       propertyPath: Speed
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 9163920248992634055, guid: 813ae8d834b6f4f809f48a28b7cbb9be,
+        type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1158258839}
     - target: {fileID: 9163920248992634056, guid: 813ae8d834b6f4f809f48a28b7cbb9be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5351,6 +5371,11 @@ PrefabInstance:
       propertyPath: Speed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 9163920248992634055, guid: 813ae8d834b6f4f809f48a28b7cbb9be,
+        type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1158258839}
     - target: {fileID: 9163920248992634056, guid: 813ae8d834b6f4f809f48a28b7cbb9be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -77351,7 +77376,7 @@ PrefabInstance:
     - target: {fileID: 8047541237580139222, guid: 0576170c17cb7462f8f7e26f51648bda,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.027611783
+      value: 0.027611835
       objectReference: {fileID: 0}
     - target: {fileID: 8047541237632473407, guid: 0576170c17cb7462f8f7e26f51648bda,
         type: 3}
@@ -77446,7 +77471,7 @@ PrefabInstance:
     - target: {fileID: 8047541237705540024, guid: 0576170c17cb7462f8f7e26f51648bda,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000022346734
+      value: -0.000000018622279
       objectReference: {fileID: 0}
     - target: {fileID: 8047541237705540024, guid: 0576170c17cb7462f8f7e26f51648bda,
         type: 3}
@@ -77606,12 +77631,12 @@ PrefabInstance:
     - target: {fileID: 8047541238363861693, guid: 0576170c17cb7462f8f7e26f51648bda,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.5799219
+      value: 0.57992184
       objectReference: {fileID: 0}
     - target: {fileID: 8047541238363861693, guid: 0576170c17cb7462f8f7e26f51648bda,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8146721
+      value: 0.8146722
       objectReference: {fileID: 0}
     - target: {fileID: 8047541238363861693, guid: 0576170c17cb7462f8f7e26f51648bda,
         type: 3}
@@ -103221,6 +103246,11 @@ PrefabInstance:
       propertyPath: startingPos
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9163920248992634055, guid: 813ae8d834b6f4f809f48a28b7cbb9be,
+        type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1158258839}
     - target: {fileID: 9163920248992634056, guid: 813ae8d834b6f4f809f48a28b7cbb9be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -105309,6 +105339,11 @@ PrefabInstance:
       propertyPath: Speed
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 9163920248992634055, guid: 813ae8d834b6f4f809f48a28b7cbb9be,
+        type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1158258839}
     - target: {fileID: 9163920248992634056, guid: 813ae8d834b6f4f809f48a28b7cbb9be,
         type: 3}
       propertyPath: m_LocalPosition.x
