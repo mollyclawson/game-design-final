@@ -7,7 +7,7 @@ public class WinMenu : MonoBehaviour
 {
     public void PlayAgain ()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("LevelTutorial");
     }
 
     public void QuitGame ()

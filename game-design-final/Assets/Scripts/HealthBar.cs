@@ -78,9 +78,10 @@ public class HealthBar : MonoBehaviour {
     
     private IEnumerator Wait()
     {
-      
+        PlayerPrefs.SetInt("SavedScene", SceneManager.GetActiveScene().buildIndex);
+
+
       AsyncOperation operation = SceneManager.LoadSceneAsync(nextLevel);
-      
       loadingScreen.SetActive(true);
 
       while (!operation.isDone)
