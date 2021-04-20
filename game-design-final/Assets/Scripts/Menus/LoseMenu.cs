@@ -14,7 +14,7 @@ public class LoseMenu : MonoBehaviour
     
     public void TryAgain ()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene(PlayerPrefs.GetInt("SavedScene"));
     }
 
     public void QuitGame ()
