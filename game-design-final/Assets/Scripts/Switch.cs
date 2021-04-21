@@ -21,7 +21,7 @@ public class Switch : MonoBehaviour
         // sets the switch to off sprite
         gameObject.GetComponent<SpriteRenderer>().sprite = switchOff.GetComponent<SpriteRenderer>().sprite;
 
-	sound = GetComponent<AudioSource>();
+	      sound = GetComponent<AudioSource>();
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -32,10 +32,11 @@ public class Switch : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().sprite = switchOn.GetComponent<SpriteRenderer>().sprite;
 
             // set isOn to true when triggered
+            animator.SetTrigger("SwitchOn");  
+            if (!isOn) {
+              sound.Play();
+            }    
             isOn = true;
-            animator.SetTrigger("SwitchOn");
-            
-            sound.Play();
              
         }
     }
