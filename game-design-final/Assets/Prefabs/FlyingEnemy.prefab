@@ -133,6 +133,8 @@ MonoBehaviour:
   maxSpeed: 3
   acceleration: 0.1
   healthBar: {fileID: 0}
+  range: 15
+  player: {fileID: 0}
   fireDist: 5
 --- !u!60 &4301523860820932153
 PolygonCollider2D:
