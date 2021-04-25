@@ -14,8 +14,6 @@ public class Hearts : MonoBehaviour
 
    void Update() {
 
-       Debug.Log("Health is " + health);
-
        //make sure health isn't greater than numOfHearts
        if(health > numOfHearts) {
            health = numOfHearts;
@@ -40,6 +38,7 @@ public class Hearts : MonoBehaviour
                hearts[i].enabled = false;
            }
        }
+       Debug.Log("Health is " + health);
    }
 
    public void takeDamage() {
