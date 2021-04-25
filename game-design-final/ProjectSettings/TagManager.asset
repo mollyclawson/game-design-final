@@ -12,6 +12,7 @@ TagManager:
   - healthBar
   - switch
   - Playground
+  - Hearts
   layers:
   - Default
   - TransparentFX
