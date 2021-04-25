@@ -10,12 +10,14 @@ public class Bullet : MonoBehaviour
     private bool isMoving = false;
     private float acceleration = 0.1f;
 
-    public HealthBar healthBar;
+    // public HealthBar healthBar;
+    public Hearts hearts;
 
     Rigidbody2D rb;
 
     private Transform target;
     private Vector2 moveDir;
+    private int timer = 0;
 	
 
 	// Use this for initialization
@@ -31,6 +33,7 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
+        timer++;
         // bullets move when players crouch or are 
         if (Input.GetAxisRaw("Horizontal") == 0)
         {
@@ -64,8 +67,9 @@ public class Bullet : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             Debug.Log("Hit!");
+            hearts.takeDamage();
             gameObject.SetActive(false);
-            healthBar.TakeDamage(3f);
+            
         }
         else if (col.gameObject.tag == "Playground")
         {

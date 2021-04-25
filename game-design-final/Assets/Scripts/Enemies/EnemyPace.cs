@@ -16,6 +16,7 @@ public class EnemyPace : MonoBehaviour
 
     // public HealthBar healthBar;
     public Hearts hearts;
+    private int timer = 0;
 
     private void Start()
     {
@@ -27,6 +28,7 @@ public class EnemyPace : MonoBehaviour
     // Update is called once per frame 
     void Update()
     {
+        timer++;
         if (transform.position.x > rightBound)
         {
             moveRight = false;
@@ -71,18 +73,14 @@ public class EnemyPace : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision) 
     {
         if(collision.gameObject.tag == "Player") {
-            // healthBar.TakeDamage(5f);
-            hearts.takeDamage();
-            StartCoroutine(Delay());
+            //timer is to avoid getting "hit" twice on the same collision
+            if(timer >= 60) {
+                hearts.takeDamage();
+                timer = 0;
+            } else {
+                return;
+            }
         }
     }
-
-    IEnumerator Delay() {
-        Debug.Log("Started Coroutine at timestamp: " + Time.time);
-        yield return new WaitForSeconds(5);
-        Debug.Log("Finished Coroutine at timestamp: " + Time.time);
-    }  
-
-
 }
 

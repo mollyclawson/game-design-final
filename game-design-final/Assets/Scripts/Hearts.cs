@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Hearts : MonoBehaviour
 {
-   public int health;
-   public int numOfHearts;
+   private int health = 3;
+   public int numOfHearts = 3;
 
    public Image[] hearts;
    public Sprite fullHeart;
@@ -14,9 +14,15 @@ public class Hearts : MonoBehaviour
 
    void Update() {
 
+       Debug.Log("Health is " + health);
+
        //make sure health isn't greater than numOfHearts
        if(health > numOfHearts) {
            health = numOfHearts;
+       }
+
+       if(health < 0) {
+           health = 0;
        }
 
        for(int i = 0; i < hearts.Length; i++) {
@@ -42,7 +48,4 @@ public class Hearts : MonoBehaviour
        Debug.Log("Health is now" + health);
 
    }
-
-
-
 }

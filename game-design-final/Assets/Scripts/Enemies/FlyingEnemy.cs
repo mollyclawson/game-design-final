@@ -20,7 +20,8 @@ public class FlyingEnemy: MonoBehaviour
 	private float highest_pos;
 	private float lowest_pos;
 
-	public HealthBar healthBar;
+	// public HealthBar healthBar;
+	public Hearts hearts;
 
 	// once player is within this range, enemy will start to shoot
 	public float range = 15f;
@@ -31,6 +32,7 @@ public class FlyingEnemy: MonoBehaviour
 	public float fireDist = 5f;
 	private float nextFire;
 	private float totalDist = 0f;
+	private int timer = 0;
 
 	// Use this for initialization
 	void Start()
@@ -43,6 +45,7 @@ public class FlyingEnemy: MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		timer++;
 		MoveSprite();
 		CheckIfTimeToFire();
 	}
@@ -109,11 +112,15 @@ public class FlyingEnemy: MonoBehaviour
 
 	void OnCollisionEnter2D(Collision2D col)
 	{
-		if (col.gameObject.tag == "Player")
-		{
-			Debug.Log("Hit by enemy!");
-			healthBar.TakeDamage(5f);
-		}
+		if(col.gameObject.tag == "Player") {
+            //timer is to avoid getting "hit" twice on the same collision
+            if(timer >= 60) {
+                hearts.takeDamage();
+                timer = 0;
+            } else {
+                return;
+            }
+        }
 	
 	}
 

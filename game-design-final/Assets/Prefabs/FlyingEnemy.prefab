@@ -132,7 +132,7 @@ MonoBehaviour:
   starting_pos: 0
   maxSpeed: 3
   acceleration: 0.1
-  healthBar: {fileID: 0}
+  hearts: {fileID: 1993996523927079721, guid: fe15e6f37c872914d9e14b17f183d8a0, type: 3}
   range: 15
   player: {fileID: 0}
   fireDist: 5
@@ -279,4 +279,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 7
-  healthBar: {fileID: 0}
+  hearts: {fileID: 1993996523927079721, guid: fe15e6f37c872914d9e14b17f183d8a0, type: 3}
