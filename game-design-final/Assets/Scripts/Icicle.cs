@@ -11,7 +11,7 @@ public class Icicle : MonoBehaviour
     const float k_GroundedRadius = .8f; // Radius of the overlap circle to determine if grounded
 
     Rigidbody2D rb;
-    public HealthBar healthBar;
+    public Hearts hearts;
     public float Speed = 25f;
     public float acceleration = 0.1f;
     private float curSpeed = 0f;
@@ -92,7 +92,8 @@ public class Icicle : MonoBehaviour
     void OnCollisionEnter2D (Collision2D col)
     {
       if(col.gameObject.tag == "Player") {
-            healthBar.TakeDamage(5f);
+          hearts.takeDamage();
+            // healthBar.TakeDamage(5f);
             Destroy(this.gameObject);
       }
     }

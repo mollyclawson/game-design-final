@@ -14,7 +14,8 @@ public class EnemyPace : MonoBehaviour
     private float rightBound;
     private float leftBound;
 
-    public HealthBar healthBar;
+    // public HealthBar healthBar;
+    public Hearts hearts;
 
     private void Start()
     {
@@ -70,9 +71,18 @@ public class EnemyPace : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision) 
     {
         if(collision.gameObject.tag == "Player") {
-            healthBar.TakeDamage(5f);
+            // healthBar.TakeDamage(5f);
+            hearts.takeDamage();
+            StartCoroutine(Delay());
         }
     }
+
+    IEnumerator Delay() {
+        Debug.Log("Started Coroutine at timestamp: " + Time.time);
+        yield return new WaitForSeconds(5);
+        Debug.Log("Finished Coroutine at timestamp: " + Time.time);
+    }  
+
 
 }
 

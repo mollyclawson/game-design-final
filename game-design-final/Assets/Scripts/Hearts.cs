@@ -36,4 +36,13 @@ public class Hearts : MonoBehaviour
        }
    }
 
+   public void takeDamage() {
+       Debug.Log("Health was" + health);
+       health = health - 1;
+       Debug.Log("Health is now" + health);
+
+   }
+
+
+
 }
