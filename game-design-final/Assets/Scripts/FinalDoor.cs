@@ -12,7 +12,8 @@ public class FinalDoor : MonoBehaviour
     public string nextLevel;
 
     void Start() {
-        gameObject.GetComponent<Collider2D>().isTrigger = false;
+        // gameObject.GetComponent<Collider2D>().isTrigger = false;
+        gameObject.GetComponent<Collider2D>().isTrigger = true;
     }
 
     public void OpenDoor()
@@ -31,7 +32,11 @@ public class FinalDoor : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        StartCoroutine(Wait());
+        // StartCoroutine(Wait());
+        if(isOpen == true)
+        {
+            StartCoroutine(Wait());
+        }
     }
 
     private IEnumerator Wait()
