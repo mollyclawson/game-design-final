@@ -19,13 +19,22 @@ public class Icicle : MonoBehaviour
     private bool falling = false;
     private bool m_Grounded = false; 
     private PolygonCollider2D boxCollider2D;
- 
+    
+    // public AudioSource audioSource;
+    // public AudioClip sound;
+    
+    // [RequireComponent(typeof(AudioSource))]
+    // public class Example : MonoBehaviour;
+    // 
+    // public AudioClip clip;
+    // 
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         boxCollider2D = transform.GetComponent<PolygonCollider2D>();
+        // sound = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -62,6 +71,7 @@ public class Icicle : MonoBehaviour
 				m_Grounded = true;
 				if (!wasGrounded)
                 {   
+                // AudioSource.PlayClipAtPoint(clip, transform.position);
                 Destroy(this.gameObject);
                 }
 			}
