@@ -85,7 +85,7 @@ public class YPlatform : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("no longer in contact");
+            //Debug.Log("no longer in contact");
             collision.gameObject.transform.SetParent(null);
         }
     }

@@ -104,6 +104,7 @@ public class FlyingEnemy: MonoBehaviour
 		// fires only when it has traveled a certain amount of space AND player is within range
 		if ((totalDist > nextFire) & (Vector3.Distance(player.transform.position, transform.position) < range))
 		{
+			//Debug.Log("should fire");
 			Instantiate(bullet, transform.position, Quaternion.identity);
 			nextFire = totalDist + fireDist;
 		}

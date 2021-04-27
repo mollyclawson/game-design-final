@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Hearts : MonoBehaviour
 {
@@ -22,6 +23,13 @@ public class Hearts : MonoBehaviour
        if(health < 0) {
            health = 0;
        }
+
+       if (health <= 0)
+        {
+            // DIE
+            PlayerPrefs.SetInt("SavedScene", SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene("LoseScreen");
+        }
 
        for(int i = 0; i < hearts.Length; i++) {
 

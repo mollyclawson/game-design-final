@@ -11,7 +11,8 @@ public class Bullet : MonoBehaviour
     private float acceleration = 0.1f;
 
     // public HealthBar healthBar;
-    public Hearts hearts;
+    //GameObject go = GameObject.Find("Hearts");
+    public Hearts hearts; 
 
     Rigidbody2D rb;
 
@@ -23,7 +24,10 @@ public class Bullet : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-       
+        Debug.Log("bullet start");
+        // must do this otherwise new bullets don't cause damage
+        hearts = (Hearts)GameObject.Find("Hearts").GetComponent(typeof(Hearts));
+        rb = GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
         moveDir = (target.transform.position - transform.position).normalized * maxSpeed;
         
@@ -58,27 +62,28 @@ public class Bullet : MonoBehaviour
             curSpeed = 0;
         }
 
-        transform.position = new Vector2(transform.position.x + moveDir.x * curSpeed/maxSpeed * Time.deltaTime, transform.position.y + moveDir.y * curSpeed/maxSpeed * Time.deltaTime);
-       
+        //transform.position = new Vector2(transform.position.x + moveDir.x * curSpeed/maxSpeed * Time.deltaTime, transform.position.y + moveDir.y * curSpeed/maxSpeed * Time.deltaTime);
+        rb.velocity = new Vector2(moveDir.x * curSpeed /maxSpeed, moveDir.y * curSpeed /maxSpeed);
+
     }
 
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == "Player")
         {
-            Debug.Log("Hit!");
+            Debug.Log("Hit player!");
             hearts.takeDamage();
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
+            Destroy(gameObject);
             
         }
         else if (col.gameObject.tag == "Playground")
         {
-            gameObject.SetActive(false);
+            //Debug.Log("Playground collision");
+            //gameObject.SetActive(false);
+            Destroy(gameObject);
         }
-        else
-        {
-            gameObject.SetActive(false);
-        }
+        
 	}
 
 

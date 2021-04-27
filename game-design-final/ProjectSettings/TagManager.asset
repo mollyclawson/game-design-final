@@ -13,6 +13,7 @@ TagManager:
   - switch
   - Playground
   - Hearts
+  - Flying Enemy
   layers:
   - Default
   - TransparentFX
