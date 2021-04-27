@@ -12,6 +12,12 @@ public class Hearts : MonoBehaviour
    public Image[] hearts;
    public Sprite fullHeart;
    public Sprite emptyHeart;
+   private AudioSource sound;
+   
+   void Start()
+   {
+       sound = GetComponent<AudioSource>();
+   }
 
    void Update() {
 
@@ -52,6 +58,10 @@ public class Hearts : MonoBehaviour
    public void takeDamage() {
        Debug.Log("Health was" + health);
        health = health - 1;
+       if (health != 0)
+        {
+          sound.Play();
+        }
        Debug.Log("Health is now" + health);
 
    }
