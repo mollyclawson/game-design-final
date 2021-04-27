@@ -22,7 +22,9 @@ public class EnemyPace : MonoBehaviour
     {
         leftBound = transform.position.x - startingPos;
         rightBound = leftBound + extent;
-        
+        hearts = (Hearts)GameObject.Find("Hearts").GetComponent(typeof(Hearts));
+
+
     }
 
     // Update is called once per frame 

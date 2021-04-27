@@ -40,6 +40,8 @@ public class FlyingEnemy: MonoBehaviour
 		highest_pos = extent - starting_pos;
 		lowest_pos = highest_pos - extent;
 		nextFire = fireDist;
+		hearts = (Hearts)GameObject.Find("Hearts").GetComponent(typeof(Hearts));
+		player = GameObject.Find("Player");
 	}
 
 	// Update is called once per frame
@@ -84,8 +86,10 @@ public class FlyingEnemy: MonoBehaviour
 		{
 			curSpeed = 0;
 		}
+		
 
 		// update position based on speed and direction
+		
 		if (movingUp)
 		{
 			transform.position = new Vector2(transform.position.x, transform.position.y + curSpeed * Time.deltaTime);

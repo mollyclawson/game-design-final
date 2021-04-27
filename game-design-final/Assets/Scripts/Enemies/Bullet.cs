@@ -77,7 +77,7 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
             
         }
-        else if (col.gameObject.tag == "Playground")
+        else if ((col.gameObject.tag == "Playground") | (col.gameObject.tag == "MovingPlatform"))
         {
             //Debug.Log("Playground collision");
             //gameObject.SetActive(false);

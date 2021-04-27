@@ -7,10 +7,11 @@ public class PlayerMovement : MonoBehaviour
 
     public PlayerController controller;
     public Animator animator;
+    public Transform t_form;
     float horizontalMove = 0f;
     public float runSpeed = 40f;
     public float acceleration = 0.1f;
-    private float curSpeed = 0;
+    public float curSpeed = 0f;
     bool jump = false;
     bool crouch = false;
     private Rigidbody2D m_Rigidbody2D;
@@ -67,7 +68,5 @@ public class PlayerMovement : MonoBehaviour
         controller.Move((horizontalMove * Time.fixedDeltaTime), crouch, jump);
         jump = false; 
     }
-
-  
 
 }
