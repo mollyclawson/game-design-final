@@ -19,6 +19,9 @@ public class Icicle : MonoBehaviour
     private bool falling = false;
     private bool m_Grounded = false; 
     private PolygonCollider2D boxCollider2D;
+
+    public SoundManager soundManager;
+    private AudioSource icicleSound;
     
     // public AudioSource audioSource;
     // public AudioClip sound;
@@ -34,7 +37,6 @@ public class Icicle : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         boxCollider2D = transform.GetComponent<PolygonCollider2D>();
-        // sound = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -102,7 +104,8 @@ public class Icicle : MonoBehaviour
     void OnCollisionEnter2D (Collision2D col)
     {
       if(col.gameObject.tag == "Player") {
-          hearts.takeDamage();
+            hearts.takeDamage();
+            soundManager.playIceSound();
             // healthBar.TakeDamage(5f);
             Destroy(this.gameObject);
       }
