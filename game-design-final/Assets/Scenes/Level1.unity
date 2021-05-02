@@ -1366,6 +1366,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7925945853714034085, guid: 819910de83865ca4fb49d1e8cb726a99,
         type: 3}
+      propertyPath: hearts
+      value: 
+      objectReference: {fileID: 1281011835}
+    - target: {fileID: 7925945853714034085, guid: 819910de83865ca4fb49d1e8cb726a99,
+        type: 3}
       propertyPath: soundManager
       value: 
       objectReference: {fileID: 1741596018}
@@ -1407,7 +1412,7 @@ PrefabInstance:
     - target: {fileID: 7925945853714034266, guid: 819910de83865ca4fb49d1e8cb726a99,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7925945853714034266, guid: 819910de83865ca4fb49d1e8cb726a99,
         type: 3}
@@ -61291,7 +61296,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1741596020
 AudioSource:
