@@ -74,6 +74,7 @@ public class Icicle : MonoBehaviour
 				if (!wasGrounded)
                 {   
                 // AudioSource.PlayClipAtPoint(clip, transform.position);
+                soundManager.playIceSound();
                 Destroy(this.gameObject);
                 }
 			}
