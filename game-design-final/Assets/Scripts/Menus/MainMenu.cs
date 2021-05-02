@@ -10,6 +10,10 @@ public class MainMenu : MonoBehaviour
     public GameObject loadingScreen;
     public Slider slider;
     //public RectTransform loadingPlatform;
+
+    private void Start() {
+      PlayerPrefs.SetInt("Health", 3);
+    }
     
     public void PlayGame ()
     {

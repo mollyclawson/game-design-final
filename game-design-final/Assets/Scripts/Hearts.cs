@@ -16,7 +16,10 @@ public class Hearts : MonoBehaviour
    
    void Start()
    {
+       //COMMENT OUT THIS LINE IF YOU AREN'T STARTING FROM MAIN MENU
+       health = PlayerPrefs.GetInt("Health");
        sound = GetComponent<AudioSource>();
+
    }
 
    void Update() {
@@ -52,17 +55,15 @@ public class Hearts : MonoBehaviour
                hearts[i].enabled = false;
            }
        }
-       Debug.Log("Health is " + health);
    }
 
    public void takeDamage() {
-       Debug.Log("Health was" + health);
        health = health - 1;
+       PlayerPrefs.SetInt("Health", health);
        if (health != 0)
         {
           sound.Play();
         }
-       Debug.Log("Health is now" + health);
 
    }
 }
