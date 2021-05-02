@@ -66,4 +66,10 @@ public class Hearts : MonoBehaviour
         }
 
    }
+
+   public void gainHealth(){
+       if(health == 3) return;
+       health = health + 1;
+       PlayerPrefs.SetInt("Health", health);
+   }
 }
