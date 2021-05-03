@@ -220,7 +220,7 @@ public class PlayerController : MonoBehaviour
 
   private IEnumerator Wait()
   {
-    yield return new WaitForSeconds(0.1f);
+    yield return new WaitForSeconds(0.07f);
     m_Grounded = false;  
   }
 

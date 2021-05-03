@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class Hearts : MonoBehaviour
 {
@@ -13,13 +14,14 @@ public class Hearts : MonoBehaviour
    public Sprite fullHeart;
    public Sprite emptyHeart;
    private AudioSource sound;
+   public Image vignette;
    
    void Start()
    {
        //COMMENT OUT THIS LINE IF YOU AREN'T STARTING FROM MAIN MENU
-       health = PlayerPrefs.GetInt("Health");
+       // health = PlayerPrefs.GetInt("Health");
        sound = GetComponent<AudioSource>();
-
+       vignette.enabled = false;
    }
 
    void Update() {
@@ -64,7 +66,14 @@ public class Hearts : MonoBehaviour
         {
           sound.Play();
         }
-
+       vignette.enabled = true; 
+       StartCoroutine(hurtVignette());   
+   }
+   
+   private IEnumerator hurtVignette()
+   {
+     yield return new WaitForSeconds(0.1f);
+     vignette.enabled = false;
    }
 
    public void gainHealth(){

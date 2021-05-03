@@ -196,6 +196,7 @@ MonoBehaviour:
   hearts: {fileID: 0}
   Speed: 9
   acceleration: 0.1
+  soundManager: {fileID: 0}
 --- !u!50 &7925945853714034264
 Rigidbody2D:
   serializedVersion: 4
@@ -228,7 +229,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -8199903774617421818, guid: bf07fc4106e47c291b8689f247537246,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 0b6f14a3cff728c8f876d30fa538cc7d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: faa3e59db76cdd8f1bbc93ec3b01f00d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.814
   m_Pitch: 1
