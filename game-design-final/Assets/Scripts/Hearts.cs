@@ -19,7 +19,7 @@ public class Hearts : MonoBehaviour
    void Start()
    {
        //COMMENT OUT THIS LINE IF YOU AREN'T STARTING FROM MAIN MENU
-       // health = PlayerPrefs.GetInt("Health");
+       health = PlayerPrefs.GetInt("Health");
        sound = GetComponent<AudioSource>();
        vignette.enabled = false;
    }
