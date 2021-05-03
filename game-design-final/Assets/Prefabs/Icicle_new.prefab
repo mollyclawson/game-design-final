@@ -197,6 +197,8 @@ MonoBehaviour:
   Speed: 9
   acceleration: 0.1
   soundManager: {fileID: 0}
+  impactEffect: {fileID: 6101226257319498038, guid: 76712c37846354b2da7adee0dea4cc6b,
+    type: 3}
 --- !u!50 &7925945853714034264
 Rigidbody2D:
   serializedVersion: 4

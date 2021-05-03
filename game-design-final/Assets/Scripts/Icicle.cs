@@ -6,7 +6,7 @@ public class Icicle : MonoBehaviour
 {
     [SerializeField] private LayerMask m_WhatIsGround;							
     // A mask determining what is ground to the character
-	[SerializeField] private Transform m_GroundCheck;							
+  	[SerializeField] private Transform m_GroundCheck;							
     // A position marking where to check if the player is grounded.
     const float k_GroundedRadius = .8f; // Radius of the overlap circle to determine if grounded
 
@@ -22,6 +22,8 @@ public class Icicle : MonoBehaviour
 
     public SoundManager soundManager;
     private AudioSource icicleSound;
+    
+    public GameObject impactEffect;
     
     // public AudioSource audioSource;
     // public AudioClip sound;
@@ -75,7 +77,10 @@ public class Icicle : MonoBehaviour
                 {   
                 // AudioSource.PlayClipAtPoint(clip, transform.position);
                 soundManager.playIceSound();
-                Destroy(this.gameObject);
+                
+                Instantiate(impactEffect, transform.position, transform.rotation);
+                
+                Destroy(gameObject);
                 }
 			}
 		}
@@ -108,6 +113,7 @@ public class Icicle : MonoBehaviour
             hearts.takeDamage();
             soundManager.playIceSound();
             // healthBar.TakeDamage(5f);
+            Instantiate(impactEffect, transform.position, transform.rotation);
             Destroy(this.gameObject);
       }
     }
