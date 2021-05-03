@@ -15,7 +15,7 @@ public class Hearts : MonoBehaviour
    public Sprite emptyHeart;
    private AudioSource sound;
    public Image vignette;
-   
+
    void Start()
    {
        //COMMENT OUT THIS LINE IF YOU AREN'T STARTING FROM MAIN MENU
@@ -66,10 +66,10 @@ public class Hearts : MonoBehaviour
         {
           sound.Play();
         }
-       vignette.enabled = true; 
-       StartCoroutine(hurtVignette());   
+       vignette.enabled = true;
+       StartCoroutine(hurtVignette());
    }
-   
+
    private IEnumerator hurtVignette()
    {
      yield return new WaitForSeconds(0.1f);
