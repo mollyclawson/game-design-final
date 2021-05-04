@@ -80,6 +80,7 @@ public class Hearts : MonoBehaviour
    public void gainHealth(){
        if(health == 3) return;
        health = health + 1;
+       Debug.Log("In gainHealth");
        PlayerPrefs.SetInt("Health", health);
    }
 }
