@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class bigfanscript : MonoBehaviour
 {
-	public float speed = 10f;
+	public float speed = 40f;
 	public PlayerMovement player;
 
     // Start is called before the first frame update
@@ -18,4 +18,6 @@ public class bigfanscript : MonoBehaviour
     {
         transform.Rotate(0f, 0f, speed * Time.deltaTime * player.timeScale());
     }
+
+    
 }

@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public Transform t_form;
     float horizontalMove = 0f;
+    private float time_scale = 0f;
     public float runSpeed = 40f;
     public float acceleration = 0.1f;
     public float curSpeed = 0f;
@@ -23,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         curSpeed = Mathf.Lerp(curSpeed, runSpeed, acceleration);
+        time_scale = Mathf.Lerp(time_scale, runSpeed, acceleration);
         // horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
         // updates current run speed based on how long button has been pressed
@@ -33,6 +35,10 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetAxisRaw("Horizontal") == 0)
         {
             curSpeed = 0;
+            if (Input.GetAxisRaw("Crouch") == 0)
+            {
+                time_scale = 0;
+            }
         }
 
         if (Input.GetButtonDown("Jump"))
@@ -71,7 +77,8 @@ public class PlayerMovement : MonoBehaviour
 
     public float timeScale()
     {
-        return curSpeed / runSpeed;
+        // Debug.Log("Time scale is" + time_scale / runSpeed);
+        return time_scale / runSpeed;
     }
 
 }
