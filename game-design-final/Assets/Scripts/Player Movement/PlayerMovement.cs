@@ -66,7 +66,14 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         controller.Move((horizontalMove * Time.fixedDeltaTime), crouch, jump);
-        jump = false; 
+        jump = false;
+    }
+
+    public float timeScale()
+    {
+        return curSpeed / runSpeed;
     }
 
 }
+
+    
