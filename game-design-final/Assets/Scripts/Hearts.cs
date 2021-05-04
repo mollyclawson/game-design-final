@@ -40,6 +40,7 @@ public class Hearts : MonoBehaviour
             // DIE
             PlayerPrefs.SetInt("SavedScene", SceneManager.GetActiveScene().buildIndex);
             SceneManager.LoadScene("LoseScreen");
+            PlayerPrefs.SetInt("Health", 3);
         }
 
        for(int i = 0; i < hearts.Length; i++) {
