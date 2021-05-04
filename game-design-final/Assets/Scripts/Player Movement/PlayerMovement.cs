@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public float runSpeed = 40f;
     public float acceleration = 0.1f;
     public float curSpeed = 0f;
+    public float timeDecel = 0.1f;
     bool jump = false;
     bool crouch = false;
     private Rigidbody2D m_Rigidbody2D;
@@ -24,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         curSpeed = Mathf.Lerp(curSpeed, runSpeed, acceleration);
-        time_scale = Mathf.Lerp(time_scale, runSpeed, acceleration);
+        
         // horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
         // updates current run speed based on how long button has been pressed
@@ -37,9 +38,11 @@ public class PlayerMovement : MonoBehaviour
             curSpeed = 0;
             if (Input.GetAxisRaw("Crouch") == 0)
             {
-                time_scale = 0;
+                //time_scale -= Mathf.Lerp(time_scale, runSpeed, acceleration * 0.1f);
+                time_scale = Mathf.Lerp(time_scale, 0.0f, acceleration);
             }
         }
+        else time_scale = Mathf.Lerp(time_scale, runSpeed, acceleration);
 
         if (Input.GetButtonDown("Jump"))
         {
