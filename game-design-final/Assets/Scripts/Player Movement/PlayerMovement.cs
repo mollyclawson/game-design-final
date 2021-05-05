@@ -41,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
                 //time_scale -= Mathf.Lerp(time_scale, runSpeed, acceleration * 0.1f);
                 time_scale = Mathf.Lerp(time_scale, 0.0f, acceleration);
             }
+            else time_scale = Mathf.Lerp(time_scale, runSpeed, acceleration);
         }
         else time_scale = Mathf.Lerp(time_scale, runSpeed, acceleration);
 
