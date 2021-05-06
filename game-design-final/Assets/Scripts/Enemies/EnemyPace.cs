@@ -13,6 +13,7 @@ public class EnemyPace : MonoBehaviour
     public float startingPos = 0; // where platform starts in range of motion
     private float rightBound;
     private float leftBound;
+    public float collisionForce;
 
     // public HealthBar healthBar;
     public Hearts hearts;
@@ -23,7 +24,6 @@ public class EnemyPace : MonoBehaviour
         leftBound = transform.position.x - startingPos;
         rightBound = leftBound + extent;
         hearts = (Hearts)GameObject.Find("Hearts").GetComponent(typeof(Hearts));
-
 
     }
 
@@ -78,6 +78,9 @@ public class EnemyPace : MonoBehaviour
             //timer is to avoid getting "hit" twice on the same collision
             if(timer >= 60) {
                 hearts.takeDamage();
+                // Vector2 force = -collision.rigidbody.velocity.normalized * collisionForce;
+                // Debug.Log("Force is" + force);
+                // collision.rigidbody.AddForce(force, ForceMode2D mode = ForceMode2D.Force);
                 timer = 0;
             } else {
                 return;

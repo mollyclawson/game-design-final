@@ -252,6 +252,11 @@ PrefabInstance:
       propertyPath: hearts
       value: 
       objectReference: {fileID: 1281011835}
+    - target: {fileID: 9163920248992634055, guid: 813ae8d834b6f4f809f48a28b7cbb9be,
+        type: 3}
+      propertyPath: playerRB
+      value: 
+      objectReference: {fileID: 1543822295}
     - target: {fileID: 9163920248992634056, guid: 813ae8d834b6f4f809f48a28b7cbb9be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -910,7 +915,7 @@ MonoBehaviour:
   isOpen: 0
   loadingScreen: {fileID: 1416764012}
   slider: {fileID: 1916855192}
-  nextLevel: Level4
+  nextLevel: Level2
 --- !u!61 &137293097
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3009,6 +3014,11 @@ PrefabInstance:
       propertyPath: hearts
       value: 
       objectReference: {fileID: 1281011835}
+    - target: {fileID: 9163920248992634055, guid: 813ae8d834b6f4f809f48a28b7cbb9be,
+        type: 3}
+      propertyPath: playerRB
+      value: 
+      objectReference: {fileID: 1543822295}
     - target: {fileID: 9163920248992634056, guid: 813ae8d834b6f4f809f48a28b7cbb9be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -56417,7 +56427,7 @@ PrefabInstance:
     - target: {fileID: 8047541237015844163, guid: 0576170c17cb7462f8f7e26f51648bda,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0065360055
+      value: 0.00653595
       objectReference: {fileID: 0}
     - target: {fileID: 8047541237015844163, guid: 0576170c17cb7462f8f7e26f51648bda,
         type: 3}
@@ -56502,7 +56512,7 @@ PrefabInstance:
     - target: {fileID: 8047541237580139222, guid: 0576170c17cb7462f8f7e26f51648bda,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.027611814
+      value: 0.027611762
       objectReference: {fileID: 0}
     - target: {fileID: 8047541237632473407, guid: 0576170c17cb7462f8f7e26f51648bda,
         type: 3}
@@ -56597,7 +56607,7 @@ PrefabInstance:
     - target: {fileID: 8047541237705540024, guid: 0576170c17cb7462f8f7e26f51648bda,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00000004283124
+      value: 0.000000048417924
       objectReference: {fileID: 0}
     - target: {fileID: 8047541237705540024, guid: 0576170c17cb7462f8f7e26f51648bda,
         type: 3}
@@ -56607,7 +56617,7 @@ PrefabInstance:
     - target: {fileID: 8047541237798856993, guid: 0576170c17cb7462f8f7e26f51648bda,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.19532977
+      value: 0.19532987
       objectReference: {fileID: 0}
     - target: {fileID: 8047541237798856993, guid: 0576170c17cb7462f8f7e26f51648bda,
         type: 3}
@@ -56707,12 +56717,12 @@ PrefabInstance:
     - target: {fileID: 8047541238138774808, guid: 0576170c17cb7462f8f7e26f51648bda,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.9798811
+      value: -0.97988117
       objectReference: {fileID: 0}
     - target: {fileID: 8047541238138774808, guid: 0576170c17cb7462f8f7e26f51648bda,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.19958203
+      value: 0.19958201
       objectReference: {fileID: 0}
     - target: {fileID: 8047541238142141164, guid: 0576170c17cb7462f8f7e26f51648bda,
         type: 3}
@@ -56893,6 +56903,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8846ccb8da327ee409d605e4e7aabb96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &1543822295 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 597432622618030834, guid: 0576170c17cb7462f8f7e26f51648bda,
+    type: 3}
+  m_PrefabInstance: {fileID: 1543822293}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1559181091 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1964932982683410203, guid: 2a57a2be3b75841208f7c3f22891e65a,
@@ -63300,6 +63316,16 @@ PrefabInstance:
       propertyPath: hearts
       value: 
       objectReference: {fileID: 1281011835}
+    - target: {fileID: 9163920248992634055, guid: 813ae8d834b6f4f809f48a28b7cbb9be,
+        type: 3}
+      propertyPath: playerRB
+      value: 
+      objectReference: {fileID: 1543822295}
+    - target: {fileID: 9163920248992634055, guid: 813ae8d834b6f4f809f48a28b7cbb9be,
+        type: 3}
+      propertyPath: collisionForce
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 9163920248992634056, guid: 813ae8d834b6f4f809f48a28b7cbb9be,
         type: 3}
       propertyPath: m_LocalPosition.x

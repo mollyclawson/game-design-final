@@ -151,7 +151,9 @@ MonoBehaviour:
   acceleration: 0.1
   extent: 25
   startingPos: 0
-  healthBar: {fileID: 0}
+  playerRB: {fileID: 597432622618030834, guid: 0576170c17cb7462f8f7e26f51648bda, type: 3}
+  collisionForce: 3
+  hearts: {fileID: 0}
 --- !u!50 &9163920248992634054
 Rigidbody2D:
   serializedVersion: 4
