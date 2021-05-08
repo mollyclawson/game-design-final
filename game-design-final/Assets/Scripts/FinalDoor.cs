@@ -10,6 +10,7 @@ public class FinalDoor : MonoBehaviour
     public GameObject loadingScreen;
     public Slider slider;
     public string nextLevel;
+    public Animator animator;
 
     void Start() {
         // gameObject.GetComponent<Collider2D>().isTrigger = false;
@@ -35,22 +36,26 @@ public class FinalDoor : MonoBehaviour
         // StartCoroutine(Wait());
         if(isOpen == true)
         {
+            //ADD DOOR SOUND HERE
+            animator.SetTrigger("OpenDoor");
             StartCoroutine(Wait());
         }
     }
 
     private IEnumerator Wait()
     {
-
-      AsyncOperation operation = SceneManager.LoadSceneAsync(nextLevel);
-
-      loadingScreen.SetActive(true);
-
-      while (!operation.isDone)
-      {
-        float progress = Mathf.Clamp01(operation.progress/.9f);
-        slider.value = progress;
-        yield return null;
-      }
+      yield return new WaitForSeconds(2f);
+      SceneManager.LoadScene(nextLevel);
+      
+      // AsyncOperation operation = SceneManager.LoadSceneAsync(nextLevel);
+      // 
+      // loadingScreen.SetActive(true);
+      // 
+      // while (!operation.isDone)
+      // {
+      //   float progress = Mathf.Clamp01(operation.progress/.9f);
+      //   slider.value = progress;
+      //   yield return null;
+      // }
     }
 }
