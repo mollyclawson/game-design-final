@@ -766,6 +766,7 @@ MonoBehaviour:
   acceleration: 0.1
   curSpeed: 0
   timeDecel: 0.1
+  isDead: 0
 --- !u!82 &-8297359077377565437
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1264,7 +1265,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 62f9b01e29f5a4294be674ea3a977a10, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.108
+  m_Volume: 0
   m_Pitch: 0.73
   Loop: 0
   Mute: 0

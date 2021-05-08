@@ -20,13 +20,17 @@ public class Hearts : MonoBehaviour
    private AudioSource yellSound;
    private AudioSource fallSound;
    
-   public PlayerMovement deathbool;
-   public EnemyPace spikebool;
-   //public GameObject deathMenu;
+   private PlayerMovement deathbool;
+   private loseMenu deathMenu;
+   private List<GameObject> spikes;
+   
 
    void Start()
    {
        //COMMENT OUT THIS LINE IF YOU AREN'T STARTING FROM MAIN MENU
+       List<GameObject> spikes = new List<GameObject>();
+       List<GameObject> platforms = new List<GameObject>();
+       
        health = PlayerPrefs.GetInt("Health");
        vignette.enabled = false;
        
@@ -34,9 +38,13 @@ public class Hearts : MonoBehaviour
        deathbool = g.GetComponent<PlayerMovement>();
        deathbool.isDead = false;
        
-       GameObject s = GameObject.FindGameObjectWithTag("Spike");
-       spikebool = s.GetComponent<EnemyPace>();
-       spikebool.isDead = false;
+       foreach(GameObject ObjectFound in GameObject.FindGameObjectsWithTag("Spike"))
+       {
+         ObjectFound.GetComponent<EnemyPace>().isDead = false;
+       }
+       
+       GameObject l = GameObject.FindGameObjectWithTag("canvas");
+       deathMenu = l.GetComponent<loseMenu>();
    }
    
      private void Awake()
@@ -65,7 +73,12 @@ public class Hearts : MonoBehaviour
         {
             // DIE
             deathbool.isDead = true;
-            spikebool.isDead = true;
+            //spikebool.isDead = true;
+            foreach(GameObject ObjectFound in GameObject.FindGameObjectsWithTag("Spike"))
+            {
+              ObjectFound.GetComponent<EnemyPace>().isDead = true;
+            }
+            
             animator.SetTrigger("Isdead");
             PlayerPrefs.SetInt("SavedScene", SceneManager.GetActiveScene().buildIndex);
             PlayerPrefs.SetInt("Health", 3);
@@ -92,17 +105,19 @@ public class Hearts : MonoBehaviour
    private IEnumerator Lose()
    {
      yield return new WaitForSeconds(2f);
-     //deathMenu.ToggleLoseMenu(); //Doesn't seem to work
-     SceneManager.LoadScene("LoseScreen");
+     deathMenu.ToggleLoseMenu();
+     //SceneManager.LoadScene("LoseScreen");
    }
 
    public void takeDamage() {
        health = health - 1;
        PlayerPrefs.SetInt("Health", health);
-       yellSound.Play();
        if(health <= 0)
        {
+         yellSound.Play();
          StartCoroutine(Fall());
+       } else if (health > 0) {
+         yellSound.Play();
        }
        vignette.enabled = true;
        StartCoroutine(hurtVignette());

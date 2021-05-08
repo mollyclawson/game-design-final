@@ -14,6 +14,8 @@ TagManager:
   - Playground
   - Hearts
   - Flying Enemy
+  - Spike
+  - canvas
   layers:
   - Default
   - TransparentFX

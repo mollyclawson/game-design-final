@@ -26,7 +26,7 @@ public class loseMenu : MonoBehaviour
         
       } else {
         transition += Time.deltaTime;
-        loseMenuImg.color = Color.Lerp(new Color(0,0,0,0), Color.black, transition);
+        loseMenuImg.color = Color.Lerp(new Color(0,0,0,0), new Color(0,0,0,0.5f), transition);
       }
     }
     
