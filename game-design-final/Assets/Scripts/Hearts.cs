@@ -13,10 +13,12 @@ public class Hearts : MonoBehaviour
    public Image[] hearts;
    public Sprite fullHeart;
    public Sprite emptyHeart;
-   private AudioSource sound;
    public Image vignette;
    
    public Animator animator;
+   
+   private AudioSource yellSound;
+   private AudioSource fallSound;
    
    //public GameObject deathMenu;
 
@@ -24,9 +26,19 @@ public class Hearts : MonoBehaviour
    {
        //COMMENT OUT THIS LINE IF YOU AREN'T STARTING FROM MAIN MENU
        health = PlayerPrefs.GetInt("Health");
-       sound = GetComponent<AudioSource>();
        vignette.enabled = false;
    }
+   
+     private void Awake()
+   	{
+   		AudioSource[] sounds = GetComponents<AudioSource>();
+   		for ( int i = 0; i < sounds.Length; i++ )
+   		{
+   			if ( sounds[i].clip.name == "player_yell" ) yellSound = sounds[i];
+   			if ( sounds[i].clip.name == "fall_on_ground" ) fallSound = sounds[i];
+   		}
+
+   	}
 
    void Update() {
 
@@ -75,9 +87,19 @@ public class Hearts : MonoBehaviour
    public void takeDamage() {
        health = health - 1;
        PlayerPrefs.SetInt("Health", health);
-       sound.Play();
+       yellSound.Play();
+       if(health <= 0)
+       {
+         StartCoroutine(Fall());
+       }
        vignette.enabled = true;
        StartCoroutine(hurtVignette());
+   }
+   
+   private IEnumerator Fall()
+   {
+     yield return new WaitForSeconds(0.2f);
+     fallSound.Play();
    }
 
    private IEnumerator hurtVignette()

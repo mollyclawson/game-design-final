@@ -12,10 +12,12 @@ public class FinalDoor : MonoBehaviour
     public string nextLevel;
     public Animator animator;
     public Animator transition;
+    private AudioSource sound;
 
     void Start() {
         // gameObject.GetComponent<Collider2D>().isTrigger = false;
         gameObject.GetComponent<Collider2D>().isTrigger = true;
+        sound = GetComponent<AudioSource>();
     }
 
     public void OpenDoor()
@@ -39,6 +41,7 @@ public class FinalDoor : MonoBehaviour
         {
             //ADD DOOR SOUND HERE
             animator.SetTrigger("OpenDoor");
+            sound.Play();
             StartCoroutine(Wait());
         }
     }

@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
   	private AudioSource hurtSound1;
    	private AudioSource hurtSound2;
    	private AudioSource dieSound;
+    private AudioSource landSound;
   
   private void Start()
 	{
@@ -73,6 +74,7 @@ public class PlayerController : MonoBehaviour
 			if ( sounds[i].clip.name == "enemy_hit_1" ) hurtSound1 = sounds[i];
 			if ( sounds[i].clip.name == "enemy_hit_2" ) hurtSound2 = sounds[i];
 			if ( sounds[i].clip.name == "player_yell" ) dieSound = sounds[i];
+      if ( sounds[i].clip.name == "landing" ) landSound = sounds[i];
 		}
 
 	}
@@ -109,6 +111,7 @@ public class PlayerController : MonoBehaviour
   public void OnLanding()
   {
     //If rigidbody2D velocity is downwards only    
+      landSound.Play();
       extraJumps = 1;
       animator.SetBool("IsDoubleJump", false);
       animator.SetBool("IsFalling", false);
