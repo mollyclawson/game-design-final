@@ -15,6 +15,8 @@ public class Hearts : MonoBehaviour
    public Sprite emptyHeart;
    private AudioSource sound;
    public Image vignette;
+   
+   public Animator animator;
 
    void Start()
    {
@@ -38,9 +40,10 @@ public class Hearts : MonoBehaviour
        if (health <= 0)
         {
             // DIE
+            animator.SetTrigger("Isdead");
             PlayerPrefs.SetInt("SavedScene", SceneManager.GetActiveScene().buildIndex);
-            SceneManager.LoadScene("LoseScreen");
             PlayerPrefs.SetInt("Health", 3);
+            StartCoroutine(Lose());
         }
 
        for(int i = 0; i < hearts.Length; i++) {
@@ -59,14 +62,17 @@ public class Hearts : MonoBehaviour
            }
        }
    }
+   
+   private IEnumerator Lose()
+   {
+     yield return new WaitForSeconds(2f);
+     SceneManager.LoadScene("LoseScreen");
+   }
 
    public void takeDamage() {
        health = health - 1;
        PlayerPrefs.SetInt("Health", health);
-       if (health != 0)
-        {
-          sound.Play();
-        }
+       sound.Play();
        vignette.enabled = true;
        StartCoroutine(hurtVignette());
    }

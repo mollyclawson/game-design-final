@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -188,6 +188,11 @@ PrefabInstance:
       propertyPath: vignette
       value: 
       objectReference: {fileID: 1128475124}
+    - target: {fileID: 1993996523927079721, guid: fe15e6f37c872914d9e14b17f183d8a0,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1543822294}
     - target: {fileID: 1993996523927079723, guid: fe15e6f37c872914d9e14b17f183d8a0,
         type: 3}
       propertyPath: m_Name
@@ -102573,6 +102578,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0576170c17cb7462f8f7e26f51648bda, type: 3}
+--- !u!95 &1543822294 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8047541237645952653, guid: 0576170c17cb7462f8f7e26f51648bda,
+    type: 3}
+  m_PrefabInstance: {fileID: 1543822293}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1544193392
 GameObject:
   m_ObjectHideFlags: 0

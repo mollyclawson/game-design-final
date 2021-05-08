@@ -7216,6 +7216,11 @@ PrefabInstance:
       propertyPath: vignette
       value: 
       objectReference: {fileID: 1419225994}
+    - target: {fileID: 1993996523927079721, guid: fe15e6f37c872914d9e14b17f183d8a0,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1543822294}
     - target: {fileID: 1993996523927079723, guid: fe15e6f37c872914d9e14b17f183d8a0,
         type: 3}
       propertyPath: m_Name
@@ -86241,6 +86246,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0576170c17cb7462f8f7e26f51648bda, type: 3}
+--- !u!95 &1543822294 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8047541237645952653, guid: 0576170c17cb7462f8f7e26f51648bda,
+    type: 3}
+  m_PrefabInstance: {fileID: 1543822293}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1588974685 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1964932982683410203, guid: 2a57a2be3b75841208f7c3f22891e65a,

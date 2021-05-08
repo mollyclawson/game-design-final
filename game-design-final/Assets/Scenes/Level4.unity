@@ -80780,6 +80780,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8846ccb8da327ee409d605e4e7aabb96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1543822296 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8047541237645952653, guid: 0576170c17cb7462f8f7e26f51648bda,
+    type: 3}
+  m_PrefabInstance: {fileID: 1543822293}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1560048742
 GameObject:
   m_ObjectHideFlags: 0
@@ -107695,6 +107701,11 @@ PrefabInstance:
       propertyPath: vignette
       value: 
       objectReference: {fileID: 1832044519}
+    - target: {fileID: 1993996523927079721, guid: fe15e6f37c872914d9e14b17f183d8a0,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1543822296}
     - target: {fileID: 1993996523927079723, guid: fe15e6f37c872914d9e14b17f183d8a0,
         type: 3}
       propertyPath: m_Name
