@@ -17,13 +17,14 @@ public class PlayerMovement : MonoBehaviour
     bool jump = false;
     bool crouch = false;
     private Rigidbody2D m_Rigidbody2D;
-   
-
+    public bool isDead;
 
 
     // Update is called once per frame
     void Update()
     {
+      if(!isDead)
+      {
         curSpeed = Mathf.Lerp(curSpeed, runSpeed, acceleration);
         
         // horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
@@ -60,6 +61,9 @@ public class PlayerMovement : MonoBehaviour
         {
             crouch = false;
         }
+      } else {
+        horizontalMove = 0f;
+      } 
     }
     
     public void OnLanding()

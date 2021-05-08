@@ -20,6 +20,7 @@ public class Hearts : MonoBehaviour
    private AudioSource yellSound;
    private AudioSource fallSound;
    
+   public PlayerMovement deathbool;
    //public GameObject deathMenu;
 
    void Start()
@@ -27,6 +28,9 @@ public class Hearts : MonoBehaviour
        //COMMENT OUT THIS LINE IF YOU AREN'T STARTING FROM MAIN MENU
        health = PlayerPrefs.GetInt("Health");
        vignette.enabled = false;
+       GameObject g = GameObject.FindGameObjectWithTag("Player");
+       deathbool = g.GetComponent<PlayerMovement>();
+       deathbool.isDead = false;
    }
    
      private void Awake()
@@ -54,6 +58,7 @@ public class Hearts : MonoBehaviour
        if (health <= 0)
         {
             // DIE
+            deathbool.isDead = true;
             animator.SetTrigger("Isdead");
             PlayerPrefs.SetInt("SavedScene", SceneManager.GetActiveScene().buildIndex);
             PlayerPrefs.SetInt("Health", 3);
