@@ -18,6 +18,7 @@ public class EnemyPace : MonoBehaviour
     // public HealthBar healthBar;
     public Hearts hearts;
     private int timer = 0;
+    public bool isDead;
 
     private void Start()
     {
@@ -51,6 +52,11 @@ public class EnemyPace : MonoBehaviour
         if (Input.GetAxisRaw("Crouch") != 0)
         {
             isMoving = true;
+        }
+        
+        if (isDead)
+        {
+            isMoving = false;
         }
    
 
