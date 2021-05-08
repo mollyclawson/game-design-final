@@ -11,6 +11,7 @@ public class FinalDoor : MonoBehaviour
     public Slider slider;
     public string nextLevel;
     public Animator animator;
+    public Animator transition;
 
     void Start() {
         // gameObject.GetComponent<Collider2D>().isTrigger = false;
@@ -44,7 +45,9 @@ public class FinalDoor : MonoBehaviour
 
     private IEnumerator Wait()
     {
-      yield return new WaitForSeconds(2f);
+      yield return new WaitForSeconds(1f);
+      transition.SetTrigger("Start");
+      yield return new WaitForSeconds(1f);
       SceneManager.LoadScene(nextLevel);
       
       // AsyncOperation operation = SceneManager.LoadSceneAsync(nextLevel);

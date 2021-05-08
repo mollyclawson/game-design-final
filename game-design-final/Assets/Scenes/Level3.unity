@@ -1065,6 +1065,7 @@ MonoBehaviour:
   slider: {fileID: 1916855192}
   nextLevel: Level4
   animator: {fileID: 0}
+  transition: {fileID: 0}
 --- !u!61 &137293097
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6445,6 +6446,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a34a511305754d3d8cf989228ff7faf, type: 3}
+--- !u!95 &716548412 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4564528672429585553, guid: 1a34a511305754d3d8cf989228ff7faf,
+    type: 3}
+  m_PrefabInstance: {fileID: 716548411}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &728256327
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -83077,6 +83084,11 @@ PrefabInstance:
       propertyPath: nextLevel
       value: Level4
       objectReference: {fileID: 0}
+    - target: {fileID: 8092836752255155660, guid: 378a7da353e34486a98f0a46e34c0afb,
+        type: 3}
+      propertyPath: transition
+      value: 
+      objectReference: {fileID: 716548412}
     - target: {fileID: 8092836752255155663, guid: 378a7da353e34486a98f0a46e34c0afb,
         type: 3}
       propertyPath: m_LocalPosition.x

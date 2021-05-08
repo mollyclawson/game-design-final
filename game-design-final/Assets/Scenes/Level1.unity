@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -54947,6 +54947,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a34a511305754d3d8cf989228ff7faf, type: 3}
+--- !u!95 &1322438797 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4564528672429585553, guid: 1a34a511305754d3d8cf989228ff7faf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1322438796}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1326875114
 GameObject:
   m_ObjectHideFlags: 0
@@ -64405,6 +64411,11 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 1916855192}
+    - target: {fileID: 8092836752255155660, guid: 378a7da353e34486a98f0a46e34c0afb,
+        type: 3}
+      propertyPath: transition
+      value: 
+      objectReference: {fileID: 1322438797}
     - target: {fileID: 8092836752255155663, guid: 378a7da353e34486a98f0a46e34c0afb,
         type: 3}
       propertyPath: m_LocalPosition.x
