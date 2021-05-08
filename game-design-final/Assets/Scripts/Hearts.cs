@@ -23,6 +23,9 @@ public class Hearts : MonoBehaviour
    private PlayerMovement deathbool;
    private loseMenu deathMenu;
    private List<GameObject> spikes;
+
+   public AudioClip loseMusic;
+   //public MusicManager mm;
    
 
    void Start()
@@ -45,6 +48,8 @@ public class Hearts : MonoBehaviour
        
        GameObject l = GameObject.FindGameObjectWithTag("canvas");
        deathMenu = l.GetComponent<loseMenu>();
+       deathMenu.loseMusic = loseMusic;
+       
    }
    
      private void Awake()
@@ -105,7 +110,10 @@ public class Hearts : MonoBehaviour
    private IEnumerator Lose()
    {
      yield return new WaitForSeconds(2f);
-     deathMenu.ToggleLoseMenu();
+        //mm.ChangeBGM(loseMusic);
+        Time.timeScale = 0f;
+        deathMenu.ToggleLoseMenu();
+        
      //SceneManager.LoadScene("LoseScreen");
    }
 

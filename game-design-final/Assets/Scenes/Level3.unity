@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -5239,6 +5239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 488620408}
   - component: {fileID: 488620407}
+  - component: {fileID: 488620409}
   m_Layer: 0
   m_Name: MusicManager
   m_TagString: Untagged
@@ -5357,6 +5358,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &488620409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488620406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf30694ffd7801b438214b338eacdc09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGM: {fileID: 488620407}
 --- !u!1 &493825680
 GameObject:
   m_ObjectHideFlags: 0
@@ -7285,6 +7299,11 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 1543822294}
+    - target: {fileID: 1993996523927079721, guid: fe15e6f37c872914d9e14b17f183d8a0,
+        type: 3}
+      propertyPath: loseMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 5d646b696be5f57bf950de9e01c7d550, type: 3}
     - target: {fileID: 1993996523927079723, guid: fe15e6f37c872914d9e14b17f183d8a0,
         type: 3}
       propertyPath: m_Name
@@ -81650,6 +81669,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loseMenuUI: {fileID: 1794419780}
   loseMenuImg: {fileID: 1794419779}
+  mm: {fileID: 0}
+  loseMusic: {fileID: 0}
 --- !u!1001 &1150982929
 PrefabInstance:
   m_ObjectHideFlags: 0

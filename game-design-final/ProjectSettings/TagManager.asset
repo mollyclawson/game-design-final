@@ -16,6 +16,7 @@ TagManager:
   - Flying Enemy
   - Spike
   - canvas
+  - musicManager
   layers:
   - Default
   - TransparentFX

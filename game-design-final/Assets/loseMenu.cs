@@ -11,11 +11,16 @@ public class loseMenu : MonoBehaviour
     
     private bool isShown = false;
     private float transition = 0.0f;
+
+    public MusicManager mm;
+    public AudioClip loseMusic;
   
     // Start is called before the first frame update
     void Start()
     {
-      loseMenuUI.SetActive(false);  
+        mm = (MusicManager)GameObject.Find("MusicManager").GetComponent(typeof(MusicManager));
+        loseMenuUI.SetActive(false);
+       
     }
 
     // Update is called once per frame
@@ -39,11 +44,13 @@ public class loseMenu : MonoBehaviour
     public void ToggleLoseMenu()
     {
       loseMenuUI.SetActive(true); 
-      isShown = true; 
+      isShown = true;
+      mm.ChangeBGM(loseMusic);
     }
     
     public void Retry()
     {
+      Time.timeScale = 1f;
       SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

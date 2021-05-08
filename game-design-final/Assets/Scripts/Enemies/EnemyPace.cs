@@ -84,9 +84,9 @@ public class EnemyPace : MonoBehaviour
             //timer is to avoid getting "hit" twice on the same collision
             if(timer >= 60) {
                 hearts.takeDamage();
-                // Vector2 force = -collision.rigidbody.velocity.normalized * collisionForce;
-                // Debug.Log("Force is" + force);
-                // collision.rigidbody.AddForce(force, ForceMode2D mode = ForceMode2D.Force);
+                Vector2 force = -collision.rigidbody.velocity.normalized * collisionForce;
+                Debug.Log("Force is" + force);
+                collision.rigidbody.AddForce(force * 500, ForceMode2D.Force);
                 timer = 0;
             } else {
                 return;

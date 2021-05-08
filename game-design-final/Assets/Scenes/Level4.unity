@@ -74979,6 +74979,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1110879786}
   - component: {fileID: 1110879787}
+  - component: {fileID: 1110879788}
   m_Layer: 0
   m_Name: MusicManager
   m_TagString: Untagged
@@ -75097,6 +75098,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1110879788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110879785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf30694ffd7801b438214b338eacdc09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGM: {fileID: 1110879787}
 --- !u!1 &1116606131
 GameObject:
   m_ObjectHideFlags: 0
@@ -75305,6 +75319,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loseMenuUI: {fileID: 1701152176}
   loseMenuImg: {fileID: 1701152175}
+  mm: {fileID: 0}
+  loseMusic: {fileID: 0}
 --- !u!114 &1158258839 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3671705795315960997, guid: 2f39267abaf0c4b42bd9329e786d118a,
@@ -108252,6 +108268,11 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 1543822296}
+    - target: {fileID: 1993996523927079721, guid: fe15e6f37c872914d9e14b17f183d8a0,
+        type: 3}
+      propertyPath: loseMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 5d646b696be5f57bf950de9e01c7d550, type: 3}
     - target: {fileID: 1993996523927079723, guid: fe15e6f37c872914d9e14b17f183d8a0,
         type: 3}
       propertyPath: m_Name
