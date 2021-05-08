@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Door : MonoBehaviour
 {
     public bool isOpen = false;
+    public LevelTransition levelTransition;
 
     void Start() {
         gameObject.GetComponent<Collider2D>().isTrigger = false;
@@ -28,7 +29,7 @@ public class Door : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        // Go to next level
+        levelTransition.Transition();
         SceneManager.LoadScene("TestLevel1");
     }
 }
