@@ -17,6 +17,8 @@ public class Hearts : MonoBehaviour
    public Image vignette;
    
    public Animator animator;
+   
+   //public GameObject deathMenu;
 
    void Start()
    {
@@ -66,6 +68,7 @@ public class Hearts : MonoBehaviour
    private IEnumerator Lose()
    {
      yield return new WaitForSeconds(2f);
+     //deathMenu.ToggleLoseMenu(); //Doesn't seem to work
      SceneManager.LoadScene("LoseScreen");
    }
 

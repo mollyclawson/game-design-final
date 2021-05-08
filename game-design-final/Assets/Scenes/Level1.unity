@@ -521,8 +521,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1129189191}
-        m_MethodName: Resume
+      - m_Target: {fileID: 1129189192}
+        m_MethodName: Retry
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3908,14 +3908,13 @@ GameObject:
   - component: {fileID: 641736686}
   - component: {fileID: 641736689}
   - component: {fileID: 641736688}
-  - component: {fileID: 641736687}
   m_Layer: 13
   m_Name: 'Lose Menu '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &641736686
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3938,19 +3937,6 @@ RectTransform:
   m_AnchoredPosition: {x: -9.544922, y: -3}
   m_SizeDelta: {x: -1143.6901, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &641736687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 641736685}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73d39e60cc58841e18cbf31988adfb9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: bf07fc4106e47c291b8689f247537246, type: 2}
 --- !u!114 &641736688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3964,7 +3950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.023529412}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -5117,7 +5103,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1129189191}
+      - m_Target: {fileID: 1129189192}
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -54598,6 +54584,7 @@ GameObject:
   - component: {fileID: 1129189189}
   - component: {fileID: 1129189188}
   - component: {fileID: 1129189191}
+  - component: {fileID: 1129189192}
   m_Layer: 13
   m_Name: Canvas
   m_TagString: Untagged
@@ -54705,6 +54692,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 1528147146}
+--- !u!114 &1129189192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129189186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ac3e088029f44e97aa9f7be7ca0e8ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loseMenuUI: {fileID: 641736685}
+  loseMenuImg: {fileID: 641736688}
 --- !u!1 &1134724691 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8759794600001391981, guid: 3f41f4b4ba95f42cfabcc2d1e495ba9c,
