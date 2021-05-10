@@ -63696,7 +63696,7 @@ PrefabInstance:
     - target: {fileID: 9163920248992634055, guid: 813ae8d834b6f4f809f48a28b7cbb9be,
         type: 3}
       propertyPath: collisionForce
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9163920248992634056, guid: 813ae8d834b6f4f809f48a28b7cbb9be,
         type: 3}

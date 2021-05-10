@@ -153,6 +153,7 @@ MonoBehaviour:
   startingPos: 0
   collisionForce: 3
   hearts: {fileID: 0}
+  isDead: 0
 --- !u!50 &9163920248992634054
 Rigidbody2D:
   serializedVersion: 4
